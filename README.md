@@ -1,11 +1,26 @@
-# Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
+# 🚀 Project Name
 
-# Step 2: Navigate into the project folder
-cd <YOUR_PROJECT_NAME>
+A modern web application built using **Vite + React + TypeScript + Tailwind CSS + shadcn/ui**.
 
-# Step 3: Install dependencies
-npm install
+---
 
-# Step 4: Start development server
-npm run dev
+## 📌 About The Project
+
+This project is a fast, scalable, and modern frontend application powered by Vite.  
+It follows a clean component-based architecture and is optimized for performance and maintainability.
+
+---
+
+## 🛠 Tech Stack
+
+- ⚡ Vite – Fast build tool
+- ⚛ React – UI Library
+- 🟦 TypeScript – Type safety
+- 🎨 shadcn/ui – UI components
+- 💨 Tailwind CSS – Styling
+- 🔄 React Router DOM – Routing
+- 📦 TanStack React Query – Data fetching
+
+---
+
+## 📂 Folder Structure
