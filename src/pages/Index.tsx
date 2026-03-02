@@ -1,52 +1,35 @@
 import { Link } from "react-router-dom";
-import { Shield, Zap, Settings, Award, ArrowRight, CheckCircle2, Building2, Factory, Radio, Sun, Fuel, HeartPulse, Server, Home } from "lucide-react";
+import {
+  Shield,
+  Zap,
+  Settings,
+  Award,
+  ArrowRight,
+  CheckCircle2,
+  Building2,
+  Factory,
+  Radio,
+  Sun,
+  Fuel,
+  HeartPulse,
+  Server,
+  Home,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "/assets/hero-bg.jpg";
+import homePage from "@/lib/json/homePage.json";
+import { Testimonial } from "@/components/content/testimonial";
 
-const services = [
-  {
-    icon: Shield,
-    title: "Lightning Risk Assessment",
-    description: "Comprehensive site surveys and risk analysis as per IS/IEC 62305 standards.",
-  },
-  {
-    icon: Zap,
-    title: "LPS Design & Installation",
-    description: "End-to-end design, supply, and installation of complete protection systems.",
-  },
-  {
-    icon: Settings,
-    title: "Earthing & Grounding",
-    description: "Complete earthing solutions with soil resistivity testing and electrode installation.",
-  },
-  {
-    icon: Award,
-    title: "Annual Maintenance",
-    description: "Periodic inspection, testing, and compliance maintenance for ongoing safety.",
-  },
-];
-
-const stats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "15+", label: "Years Experience" },
-  { value: "100%", label: "Safety Record" },
-  { value: "24/7", label: "Support Available" },
-];
-
-const industries = [
-  { icon: Building2, name: "Commercial Buildings" },
-  { icon: Factory, name: "Industrial Plants" },
-  { icon: Radio, name: "Telecom Towers" },
-  { icon: Sun, name: "Solar & Wind Farms" },
-  { icon: Fuel, name: "Oil & Gas Facilities" },
-  { icon: HeartPulse, name: "Hospitals & Healthcare" },
-  { icon: Server, name: "Data Centers" },
-  { icon: Home, name: "Residential Complexes" },
-];
+const iconMap = {
+  Shield,
+  Zap,
+  Settings,
+  Award,
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -79,7 +62,9 @@ const Index = () => {
             className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm"
           >
             <Zap size={14} className="text-primary" />
-            <span className="text-xs font-semibold tracking-wider uppercase text-primary-foreground/90">IS/IEC 62305 Certified</span>
+            <span className="text-xs font-semibold tracking-wider uppercase text-primary-foreground/90">
+              IS/IEC 62305 Certified
+            </span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -97,7 +82,8 @@ const Index = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-lg sm:text-xl text-background/80 mb-10 max-w-2xl mx-auto"
           >
-            Industry-leading lightning protection systems — from risk assessment to installation. Complete safety solutions for every structure.
+            Industry-leading lightning protection systems — from risk assessment
+            to installation. Complete safety solutions for every structure.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,8 +127,8 @@ const Index = () => {
       <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+            {homePage?.stats?.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 initial="hidden"
@@ -152,8 +138,22 @@ const Index = () => {
                 variants={fadeUp}
                 className="text-center"
               >
-                <div className="font-display text-4xl lg:text-5xl font-bold text-primary-foreground">{stat.value}</div>
-                <div className="text-sm text-primary-foreground/70 mt-1 font-medium">{stat.label}</div>
+                <div
+                  className={`font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground ${stat?.icon ? "flex flex-col items-center" : "block"}`}
+                >
+                  {stat.icon ? (
+                    <img
+                      src={stat.icon}
+                      alt={stat.label}
+                      className="h-8 sm:h-14 w-10 sm:w-16 object-contain"
+                    />
+                  ) : (
+                    stat.value
+                  )}
+                </div>
+                <div className="text-xs sm:text-sm text-primary-foreground/70 mt-1 font-medium">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -165,51 +165,72 @@ const Index = () => {
         <div className="container-max">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <motion.span
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              variants={fadeUp}
               className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
             >
               Our Services
             </motion.span>
-            <motion.h2
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} variants={fadeUp}
+            <motion.h3
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={1}
+              variants={fadeUp}
               className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4"
             >
               Complete Lightning Protection Solutions
-            </motion.h2>
+            </motion.h3>
             <motion.p
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+              variants={fadeUp}
               className="text-muted-foreground"
             >
-              From risk assessment to installation and maintenance, we provide end-to-end lightning protection services.
+              From risk assessment to installation and maintenance, we provide
+              end-to-end lightning protection services.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i}
-                variants={fadeUp}
-                className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <service.icon className="text-primary group-hover:text-primary-foreground transition-colors" size={24} />
-                </div>
-                <h3 className="font-display font-semibold text-card-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-              </motion.div>
-            ))}
+            {homePage?.services?.map((service, i) => {
+              const Icon = iconMap[service.icon];
+
+              return (
+                <motion.div
+                  key={service.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
+                  variants={fadeUp}
+                  className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all group"
+                >
+                  <div className="flex items-center gap-3 sm:block">
+                    <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      {Icon && (
+                        <Icon
+                          className="text-primary group-hover:text-primary-foreground transition-colors"
+                          size={24}
+                        />
+                      )}
+                    </div>
+
+                    <h3 className="font-display font-semibold text-card-foreground mb-2">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-left text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} custom={5} variants={fadeUp}
-            className="text-center mt-10"
-          >
-            <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
-              View All Services <ArrowRight size={16} />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -218,22 +239,35 @@ const Index = () => {
         <div className="container-max">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <motion.span
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              variants={fadeUp}
               className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
             >
               Featured Products
             </motion.span>
-            <motion.h2
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} variants={fadeUp}
+            <motion.h3
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={1}
+              variants={fadeUp}
               className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4"
             >
               Premium Protection Equipment
-            </motion.h2>
+            </motion.h3>
             <motion.p
-              initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+              variants={fadeUp}
               className="text-muted-foreground"
             >
-              Explore our range of certified, high-quality lightning protection products.
+              Explore our range of certified, high-quality lightning protection
+              products.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -251,7 +285,11 @@ const Index = () => {
             ))}
           </div>
           <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} custom={4} variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={4}
+            variants={fadeUp}
             className="text-center mt-10"
           >
             <Link
@@ -268,26 +306,28 @@ const Index = () => {
       <section className="section-padding bg-section-alt">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fadeUp}>
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">Why Choose Aider</span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              variants={fadeUp}
+            >
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+                Why Choose Aider
+              </span>
+              <h3 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 Trusted by Industries Across India
-              </h2>
+              </h3>
               <p className="text-muted-foreground mb-8">
-                With over 15 years of experience, Aider has established itself as a trusted name
-                in lightning protection. Our systems are designed, tested, and installed to meet
-                international standards.
+                With over 15 years of experience, Aider has established itself
+                as a trusted name in lightning protection. Our systems are
+                designed, tested, and installed to meet international standards.
               </p>
               <ul className="space-y-4">
-                {[
-                  "IS/IEC 62305 compliant systems",
-                  "Certified engineers and technicians",
-                  "Premium quality materials with long warranty",
-                  "Post-installation support and maintenance",
-                  "Competitive pricing with no compromise on quality",
-                ].map((item, i) => (
+                {homePage?.WhyChooseUs?.map((item, i) => (
                   <motion.li
-                    key={item}
+                    key={i}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -295,21 +335,38 @@ const Index = () => {
                     variants={fadeUp}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={20} />
-                    <span className="text-foreground font-medium">{item}</span>
+                    <CheckCircle2
+                      className="text-primary shrink-0 mt-0.5"
+                      size={20}
+                    />
+                    <span className="text-foreground font-medium">
+                      {item?.item}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+              variants={fadeUp}
+            >
               <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-                <h3 className="font-display text-xl font-semibold text-card-foreground mb-6">Industries We Serve</h3>
+                <h3 className="font-display text-xl font-semibold text-card-foreground mb-6">
+                  Industries We Serve
+                </h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {industries.map((industry) => (
-                    <div key={industry.name} className="flex items-center gap-3 bg-accent rounded-lg px-4 py-3 hover:bg-primary/10 transition-colors group">
-                      <industry.icon size={16} className="text-primary shrink-0" />
-                      <span className="text-sm text-accent-foreground font-medium">{industry.name}</span>
+                  {homePage?.industries?.map((industry) => (
+                    <div
+                      key={industry.name}
+                      className="flex items-center gap-3 bg-accent rounded-lg px-2 sm:px-4 py-3 hover:bg-primary/10 transition-colors group"
+                    >
+                      <span className="text-xs sm:text-sm text-accent-foreground font-medium">
+                        {industry.name}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -324,13 +381,10 @@ const Index = () => {
         <div className="container-max">
           <div className="bg-card rounded-2xl border border-border p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fadeUp}>
-              <Zap className="text-primary mx-auto mb-4" size={32} />
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
-                "Aider's lightning protection system has given us complete peace of mind for our 200,000 sq.ft facility."
-              </h2>
-              <p className="text-muted-foreground font-medium">— Operations Director, Leading Manufacturing Plant</p>
-            </motion.div>
+
+            {homePage?.testimonial && homePage.testimonial.length > 0 && (
+              <Testimonial items={homePage.testimonial} interval={5000} />
+            )}
           </div>
         </div>
       </section>
@@ -339,7 +393,13 @@ const Index = () => {
       <section className="bg-primary section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
         <div className="container-max text-center relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fadeUp}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            variants={fadeUp}
+          >
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
               Need Lightning Protection for Your Project?
             </h2>

@@ -1,9 +1,9 @@
-import productAirTerminal from "@/assets/product-air-terminal.jpg";
-import productEseTerminal from "@/assets/product-ese-terminal.jpg";
-import productEarthingRod from "@/assets/product-earthing-rod.jpg";
-import productSurgeProtector from "@/assets/product-surge-protector.jpg";
-import productDownConductor from "@/assets/product-down-conductor.jpg";
-import productStrikeCounter from "@/assets/product-strike-counter.jpg";
+import boxADT62M from "/assets/products/boxADT62M.png";
+import productEseTerminal from "/assets/product-ese-terminal.jpg";
+import productEarthingRod from "/assets/product-earthing-rod.jpg";
+import productSurgeProtector from "/assets/product-surge-protector.jpg";
+import productDownConductor from "/assets/product-down-conductor.jpg";
+import productStrikeCounter from "/assets/product-strike-counter.jpg";
 
 export interface Product {
   id: string;
@@ -19,11 +19,13 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "air-terminal",
-    name: "Conventional Air Terminal",
-    shortDescription: "High-quality copper air terminals for direct lightning interception.",
-    description: "Our Conventional Air Terminals are manufactured from high-grade copper and stainless steel, designed to provide reliable lightning interception points on structures. These air terminals comply with IS/IEC 62305 standards and are suitable for all types of buildings and industrial installations.",
-    image: productAirTerminal,
+    id: "Box-AD-T62M",
+    name: "Box AD T62M",
+    shortDescription:
+      "High-quality copper air terminals for direct lightning interception.",
+    description:
+      "Our Conventional Air Terminals are manufactured from high-grade copper and stainless steel, designed to provide reliable lightning interception points on structures. These air terminals comply with IS/IEC 62305 standards and are suitable for all types of buildings and industrial installations.",
+    image: boxADT62M,
     category: "Air Terminals",
     specifications: [
       { label: "Material", value: "Pure Copper / Stainless Steel" },
@@ -44,8 +46,10 @@ export const products: Product[] = [
   {
     id: "ese-terminal",
     name: "ESE Lightning Arrester",
-    shortDescription: "Early Streamer Emission technology for extended protection radius.",
-    description: "The Aider ESE Lightning Arrester uses advanced Early Streamer Emission technology to provide a significantly larger protection zone compared to conventional terminals. Ideal for large open areas, warehouses, and critical infrastructure.",
+    shortDescription:
+      "Early Streamer Emission technology for extended protection radius.",
+    description:
+      "The Aider ESE Lightning Arrester uses advanced Early Streamer Emission technology to provide a significantly larger protection zone compared to conventional terminals. Ideal for large open areas, warehouses, and critical infrastructure.",
     image: productEseTerminal,
     category: "Air Terminals",
     specifications: [
@@ -67,8 +71,10 @@ export const products: Product[] = [
   {
     id: "earthing-electrode",
     name: "Copper Bonded Earthing Electrode",
-    shortDescription: "Superior grounding solutions for effective lightning current dissipation.",
-    description: "Our Copper Bonded Earthing Electrodes provide excellent grounding for lightning protection systems. The molecular bonding process ensures long-lasting conductivity and corrosion resistance in all soil conditions.",
+    shortDescription:
+      "Superior grounding solutions for effective lightning current dissipation.",
+    description:
+      "Our Copper Bonded Earthing Electrodes provide excellent grounding for lightning protection systems. The molecular bonding process ensures long-lasting conductivity and corrosion resistance in all soil conditions.",
     image: productEarthingRod,
     category: "Earthing System",
     specifications: [
@@ -90,8 +96,10 @@ export const products: Product[] = [
   {
     id: "surge-protector",
     name: "Surge Protection Device (SPD)",
-    shortDescription: "Class I+II SPD for protection against transient overvoltages.",
-    description: "Aider Surge Protection Devices safeguard sensitive electrical and electronic equipment from transient overvoltages caused by lightning. Available in Type 1, Type 2, and combined configurations for comprehensive protection.",
+    shortDescription:
+      "Class I+II SPD for protection against transient overvoltages.",
+    description:
+      "Aider Surge Protection Devices safeguard sensitive electrical and electronic equipment from transient overvoltages caused by lightning. Available in Type 1, Type 2, and combined configurations for comprehensive protection.",
     image: productSurgeProtector,
     category: "Surge Protection",
     specifications: [
@@ -113,8 +121,10 @@ export const products: Product[] = [
   {
     id: "down-conductor",
     name: "Down Conductor Tape",
-    shortDescription: "High-conductivity copper tape for lightning current path.",
-    description: "Our Down Conductor Tapes provide a reliable path for lightning current to travel from the air terminal to the earthing system. Available in bare copper and PVC-covered variants for different installation requirements.",
+    shortDescription:
+      "High-conductivity copper tape for lightning current path.",
+    description:
+      "Our Down Conductor Tapes provide a reliable path for lightning current to travel from the air terminal to the earthing system. Available in bare copper and PVC-covered variants for different installation requirements.",
     image: productDownConductor,
     category: "Conductors",
     specifications: [
@@ -136,8 +146,10 @@ export const products: Product[] = [
   {
     id: "strike-counter",
     name: "Lightning Strike Counter",
-    shortDescription: "Digital counter to monitor lightning events on your protection system.",
-    description: "The Aider Lightning Strike Counter provides accurate recording of lightning events on your protection system. Essential for maintenance scheduling and insurance documentation.",
+    shortDescription:
+      "Digital counter to monitor lightning events on your protection system.",
+    description:
+      "The Aider Lightning Strike Counter provides accurate recording of lightning events on your protection system. Essential for maintenance scheduling and insurance documentation.",
     image: productStrikeCounter,
     category: "Monitoring",
     specifications: [

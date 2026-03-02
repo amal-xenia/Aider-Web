@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import contactUs from "@/lib/json/contact.json";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -16,13 +17,11 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const contactInfo = [
-  { icon: MapPin, title: "Visit Us", lines: ["123 Industrial Area, Phase II", "Chennai, Tamil Nadu 600001", "India"] },
-  { icon: Phone, title: "Call Us", lines: ["+91 44 2345 6789", "+91 98765 43210"] },
-  { icon: Mail, title: "Email Us", lines: ["info@aiderlps.com", "sales@aiderlps.com"] },
-  { icon: Clock, title: "Working Hours", lines: ["Mon - Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"] },
-];
-
+const iconMap: any = {
+  Phone,
+  Mail,
+  MapPin,
+};
 const Contact = () => {
   const {
     register,
@@ -49,10 +48,15 @@ const Contact = () => {
 
       <section className="bg-section-alt section-padding">
         <div className="container-max text-center max-w-2xl mx-auto">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">Contact</span>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">Get In Touch</h1>
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+            Contact
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            Get In Touch
+          </h1>
           <p className="text-muted-foreground">
-            Have a project that needs lightning protection? Reach out to our team for a free consultation.
+            Have a project that needs lightning protection? Reach out to our
+            team for a free consultation.
           </p>
         </div>
       </section>
@@ -62,50 +66,107 @@ const Contact = () => {
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Contact Info Cards */}
             <div className="space-y-5">
-              {contactInfo.map((item) => (
-                <div key={item.title} className="bg-card rounded-xl border border-border p-5 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0">
-                    <item.icon className="text-primary" size={18} />
+              {contactUs?.contactInfo?.map((item) => {
+                const Icon = iconMap[item.icon]; // 👈 convert string → component
+
+                return (
+                  <div
+                    key={item.title}
+                    className="bg-card rounded-xl border border-border p-5 flex items-start gap-4"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0">
+                      {Icon && <Icon className="text-primary" size={18} />}
+                    </div>
+
+                    <div>
+                      <h3 className="font-display font-semibold text-card-foreground mb-1">
+                        {item.title}
+                      </h3>
+
+                      {item.lines1.map((line) => (
+                        <p key={line} className="text-sm text-muted-foreground">
+                          {line}
+                        </p>
+                      ))}
+
+                      {item?.lines2?.map((line2: any) => (
+                        <div key={line2}>
+                          <hr className="my-2" />
+                          <p className="text-sm text-muted-foreground">
+                            {line2}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-card-foreground mb-1">{item.title}</h3>
-                    {item.lines.map((line) => (
-                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit(onSubmit)} className="bg-card rounded-2xl border border-border p-6 sm:p-8 space-y-5">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="bg-card rounded-2xl border border-border p-6 sm:p-8 space-y-5"
+              >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className={labelClasses}>Full Name *</label>
-                    <input {...register("name")} className={inputClasses} placeholder="John Doe" />
-                    {errors.name && <p className={errorClasses}>{errors.name.message}</p>}
+                    <input
+                      {...register("name")}
+                      className={inputClasses}
+                      placeholder="John Doe"
+                    />
+                    {errors.name && (
+                      <p className={errorClasses}>{errors.name.message}</p>
+                    )}
                   </div>
                   <div>
                     <label className={labelClasses}>Email *</label>
-                    <input {...register("email")} type="email" className={inputClasses} placeholder="john@example.com" />
-                    {errors.email && <p className={errorClasses}>{errors.email.message}</p>}
+                    <input
+                      {...register("email")}
+                      type="email"
+                      className={inputClasses}
+                      placeholder="john@example.com"
+                    />
+                    {errors.email && (
+                      <p className={errorClasses}>{errors.email.message}</p>
+                    )}
                   </div>
                   <div>
                     <label className={labelClasses}>Phone *</label>
-                    <input {...register("phone")} className={inputClasses} placeholder="+91 98765 43210" />
-                    {errors.phone && <p className={errorClasses}>{errors.phone.message}</p>}
+                    <input
+                      {...register("phone")}
+                      className={inputClasses}
+                      placeholder="+91 98765 43210"
+                    />
+                    {errors.phone && (
+                      <p className={errorClasses}>{errors.phone.message}</p>
+                    )}
                   </div>
                   <div>
                     <label className={labelClasses}>Subject *</label>
-                    <input {...register("subject")} className={inputClasses} placeholder="e.g. LPS for new factory" />
-                    {errors.subject && <p className={errorClasses}>{errors.subject.message}</p>}
+                    <input
+                      {...register("subject")}
+                      className={inputClasses}
+                      placeholder="e.g. LPS for new factory"
+                    />
+                    {errors.subject && (
+                      <p className={errorClasses}>{errors.subject.message}</p>
+                    )}
                   </div>
                 </div>
                 <div>
                   <label className={labelClasses}>Message *</label>
-                  <textarea {...register("message")} className={inputClasses} rows={5} placeholder="Tell us about your requirements..." />
-                  {errors.message && <p className={errorClasses}>{errors.message.message}</p>}
+                  <textarea
+                    {...register("message")}
+                    className={inputClasses}
+                    rows={5}
+                    placeholder="Tell us about your requirements..."
+                  />
+                  {errors.message && (
+                    <p className={errorClasses}>{errors.message.message}</p>
+                  )}
                 </div>
                 <button
                   type="submit"

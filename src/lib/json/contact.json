@@ -1,0 +1,22 @@
+{
+  "contactInfo": [
+    {
+      "icon": "MapPin",
+      "title": "Visit Us",
+      "lines1": [
+        "Kaizen Star Technologies, 52/1783-A1, Janatha Road, Vyttila, Ernakulam, Kerala, India"
+      ],
+      "lines2": ["Kaizen Star Technologies, LLC P.O. Box 231527, Dubai,UAE."]
+    },
+    {
+      "icon": "Phone",
+      "title": "Call Us",
+      "lines1": ["+91 9447575107", "+971 9072846444"]
+    },
+    {
+      "icon": "Mail",
+      "title": "Email Us",
+      "lines1": ["jinsonclassic@gmail.com", "kaizenstarindia@gmail.com"]
+    }
+  ]
+}

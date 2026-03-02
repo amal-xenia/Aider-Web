@@ -1,0 +1,72 @@
+{
+  "stats": [
+    { "value": "500+", "label": "Projects Completed" },
+    { "value": "100%", "label": "Safety Record" },
+    { "value": "24/7", "label": "Support Available" },
+    { "icon": "/assets/elements/hexagon.svg", "label": "Design + Safety" },
+
+    { "icon": "/assets/elements/check.svg", "label": "Tested + Certified" },
+    {
+      "icon": "/assets/elements/lightning.svg",
+      "label": "Lightning-fast delivery"
+    }
+  ],
+
+  "services": [
+    {
+      "icon": "Shield",
+      "title": "Easy Installation",
+      "description": "We deliver safe and standards-compliant lightning protection system installations tailored to your site."
+    },
+    {
+      "icon": "Zap",
+      "title": "Maintenance",
+      "description": "We ensure reliable performance through regular inspection, testing, and preventive maintenance."
+    },
+    {
+      "icon": "Settings",
+      "title": "Earthing & Grounding",
+      "description": "We provide efficient grounding solutions for maximum protection against electrical faults and surges."
+    },
+    {
+      "icon": "Shield",
+      "title": "Lightning Risk Assessment",
+      "description": "Comprehensive site surveys and risk analysis as per IS/IEC 62305 standards."
+    }
+  ],
+  "WhyChooseUs": [
+    {
+      "item": "Enhanced Safety"
+    },
+
+    {
+      "item": "Cost-Effective Area Coverag"
+    },
+    {
+      "item": "Reduced Installation Complexity"
+    },
+    {
+      "item": "Reliable Performance During Severe Storms"
+    }
+  ],
+  "industries": [
+    { "icon": "Building1", "name": "Commercial Buildings" },
+    { "icon": "Building2", "name": "Residential Buildings" },
+    { "icon": "Factory", "name": "Industrial Plants" },
+    { "icon": "Radio", "name": "Airports & Telecom Towers" },
+    { "icon": "hospital&School", "name": "Hospitals & Schools" },
+    { "icon": "HeartPulse", "name": "Hospitals & Healthcare" },
+    { "icon": "Server", "name": "Data Centers & Critical Infrastructure" },
+    { "icon": "Oil&Gas", "name": "Oil & Gas Facilities" }
+  ],
+  "testimonial": [
+    {
+      "title": "Aider's lightning protection system has given us complete peace of mind for our 200,000 sq.ft facility.",
+      "name": " Operations Director, Leading Manufacturing Plant"
+    },
+    {
+      "title": "Aider Lightning Protection System and are highly satisfied with its reliable performance and the peace of mind it provides.",
+      "name": " Rajesh Menon, Operations Manager"
+    }
+  ]
+}

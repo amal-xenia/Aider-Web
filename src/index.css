@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 160 10% 15%;
 
-    --primary: 145 62% 32%;
+    --primary: 196 72% 22%; /* #104A62 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 145 30% 95%;
@@ -98,8 +98,13 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
   }
 }
 
@@ -114,6 +119,10 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(145, 62%, 32%), hsl(145, 62%, 45%));
+    background-image: linear-gradient(
+      135deg,
+      hsl(145, 62%, 32%),
+      hsl(145, 62%, 45%)
+    );
   }
 }
