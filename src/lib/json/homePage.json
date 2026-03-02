@@ -15,23 +15,18 @@
   "services": [
     {
       "icon": "Shield",
-      "title": "Easy Installation",
-      "description": "We deliver safe and standards-compliant lightning protection system installations tailored to your site."
+      "title": "Installation",
+      "description": "Professional installation ensures maximum system performance."
     },
     {
       "icon": "Zap",
-      "title": "Maintenance",
-      "description": "We ensure reliable performance through regular inspection, testing, and preventive maintenance."
+      "title": "Earthing & Grounding",
+      "description": "A strong grounding system is essential for effective lightning protection."
     },
     {
       "icon": "Settings",
-      "title": "Earthing & Grounding",
-      "description": "We provide efficient grounding solutions for maximum protection against electrical faults and surges."
-    },
-    {
-      "icon": "Shield",
-      "title": "Lightning Risk Assessment",
-      "description": "Comprehensive site surveys and risk analysis as per IS/IEC 62305 standards."
+      "title": "Annual Maintenance Contracts",
+      "description": "Keep your system performing at its best with regular inspections and testing."
     }
   ],
   "WhyChooseUs": [
@@ -40,7 +35,7 @@
     },
 
     {
-      "item": "Cost-Effective Area Coverag"
+      "item": "Cost-Effective Area Coverage"
     },
     {
       "item": "Reduced Installation Complexity"

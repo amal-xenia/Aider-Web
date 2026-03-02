@@ -7,13 +7,14 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Services from "./pages/Services";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
-import Gallery from "./pages/Gallery";
 import Warranty from "./pages/Warranty";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import FAQPage from "./pages/Faq";
+import OurWork from "./pages/Work";
+import DealerPage from "./pages/Dealership";
 
 const queryClient = new QueryClient();
 
@@ -38,11 +39,12 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/Work" element={<OurWork />} />
             <Route path="/warranty" element={<Warranty />} />
+            <Route path="/Dealership" element={<DealerPage />} />
+            <Route path="/Faq" element={<FAQPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

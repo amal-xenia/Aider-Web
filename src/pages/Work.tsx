@@ -28,7 +28,7 @@ const galleryItems = [
   { src: gallery6, title: "Hospital LPS System", category: "Healthcare" },
 ];
 
-const Gallery = () => (
+const OurWork = () => (
   <div className="min-h-screen">
     <Navbar />
 
@@ -81,4 +81,4 @@ const Gallery = () => (
   </div>
 );
 
-export default Gallery;
+export default OurWork;

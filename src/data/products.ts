@@ -10,8 +10,8 @@ export interface Product {
   name: string;
   shortDescription: string;
   description: string;
+  Warranty: string;
   image: string;
-  category: string;
   specifications: { label: string; value: string }[];
   features: string[];
   brochureAvailable: boolean;
@@ -22,11 +22,10 @@ export const products: Product[] = [
     id: "Box-AD-T62M",
     name: "Box AD T62M",
     shortDescription:
-      "High-quality copper air terminals for direct lightning interception.",
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T62M ",
     description:
-      "Our Conventional Air Terminals are manufactured from high-grade copper and stainless steel, designed to provide reliable lightning interception points on structures. These air terminals comply with IS/IEC 62305 standards and are suitable for all types of buildings and industrial installations.",
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T62M with independently tested and configured with lightning terminal as spheroid. This consists of an electrically isolated HE-30 (6082) alloy panel body surrounding an earthed central fin. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone and uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the“Switching Impulse Voltage and” Direct Voltage of 70 kv.",
     image: boxADT62M,
-    category: "Air Terminals",
     specifications: [
       { label: "Material", value: "Pure Copper / Stainless Steel" },
       { label: "Height", value: "300mm to 1000mm" },
@@ -35,13 +34,10 @@ export const products: Product[] = [
       { label: "Compliance", value: "IS/IEC 62305" },
       { label: "Warranty", value: "10 Years" },
     ],
-    features: [
-      "Corrosion-resistant construction",
-      "Easy rooftop mounting",
-      "UV-stabilized components",
-      "Tested to withstand 200kA impulse current",
-    ],
+    features: [],
     brochureAvailable: true,
+    Warranty: "20 Yrs. Product Replacement",
+    Protection: "62 Meters Radius",
   },
   {
     id: "ese-terminal",

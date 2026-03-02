@@ -20,9 +20,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import heroBg from "/assets/hero-bg.jpg";
+import heroBg from "/assets/hero-bg.png";
 import homePage from "@/lib/json/homePage.json";
 import { Testimonial } from "@/components/content/testimonial";
+import { IoIosArrowDown } from "react-icons/io";
 
 const iconMap = {
   Shield,
@@ -47,44 +48,38 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <img
           src={heroBg}
           alt="Lightning Protection System"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/80" />
+
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-black/70" />
         <div className="absolute inset-0 bg-primary/10" />
+
+        {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm"
-          >
-            <Zap size={14} className="text-primary" />
-            <span className="text-xs font-semibold tracking-wider uppercase text-primary-foreground/90">
-              IS/IEC 62305 Certified
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-background mb-6 leading-tight"
+            className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
           >
-            Protecting What
-            <br />
-            <span className="text-primary">Matters Most</span>
+            Advanced Lightning Protection
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-lg sm:text-xl text-background/80 mb-10 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
           >
-            Industry-leading lightning protection systems — from risk assessment
-            to installation. Complete safety solutions for every structure.
+            Protecting Lives. Safeguarding Infrastructure. Securing Critical
+            Assets
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,38 +88,44 @@ const Index = () => {
           >
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-white transition-all hover:opacity-90"
             >
               Request a Quote <ArrowRight size={16} />
             </Link>
+
             <Link
               to="/products"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-background/30 px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-background/10 backdrop-blur-sm"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Explore Products
             </Link>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* ✅ Scroll Indicator FIXED */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          onClick={() => {
+            document.getElementById("stats")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
         >
-          <div className="w-6 h-10 border-2 border-background/30 rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center items-start p-1">
             <motion.div
               animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1.5 h-1.5 bg-background/60 rounded-full mt-2"
+              transition={{ repeat: Infinity, duration: 1.2 }}
+              className="w-1.5 h-1.5 bg-white rounded-full"
             />
           </div>
         </motion.div>
       </section>
 
       {/* Stats */}
-      <section className="bg-primary relative overflow-hidden">
+      <section id="stats" className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-12 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
@@ -192,11 +193,12 @@ const Index = () => {
               variants={fadeUp}
               className="text-muted-foreground"
             >
-              From risk assessment to installation and maintenance, we provide
-              end-to-end lightning protection services.
+              We provide complete end-to-end lightning safety solutions from
+              system design and installation to grounding infrastructure and
+              long-term maintenance support.
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {homePage?.services?.map((service, i) => {
               const Icon = iconMap[service.icon];
 
@@ -211,7 +213,7 @@ const Index = () => {
                   className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all group"
                 >
                   <div className="flex items-center gap-3 sm:block">
-                    <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       {Icon && (
                         <Icon
                           className="text-primary group-hover:text-primary-foreground transition-colors"
@@ -317,12 +319,13 @@ const Index = () => {
                 Why Choose Aider
               </span>
               <h3 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Trusted by Industries Across India
+                20+ Years of Proven Experience
               </h3>
               <p className="text-muted-foreground mb-8">
-                With over 15 years of experience, Aider has established itself
-                as a trusted name in lightning protection. Our systems are
-                designed, tested, and installed to meet international standards.
+                With over two decades of expertise in lightning protection and
+                grounding systems, Aider Lightning Protection delivers trusted,
+                field-tested solutions designed to perform in the most demanding
+                environments.
               </p>
               <ul className="space-y-4">
                 {homePage?.WhyChooseUs?.map((item, i) => (
@@ -364,7 +367,7 @@ const Index = () => {
                       key={industry.name}
                       className="flex items-center gap-3 bg-accent rounded-lg px-2 sm:px-4 py-3 hover:bg-primary/10 transition-colors group"
                     >
-                      <span className="text-xs sm:text-sm text-accent-foreground font-medium">
+                      <span className="text-xs sm:text-sm text-[#043448] font-medium">
                         {industry.name}
                       </span>
                     </div>

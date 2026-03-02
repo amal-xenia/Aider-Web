@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "/assets/aider-logo.png";
 import { RiFacebookFill, RiInstagramLine } from "react-icons/ri";
+import { IoIosArrowDown } from "react-icons/io";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -11,11 +12,11 @@ const navLinks = [
     label: "Products",
     children: [
       { label: "All Products", path: "/products" },
-      { label: "Our Work", path: "/gallery" },
+      { label: "Our Work", path: "/Work" },
     ],
   },
   { label: "Warranty", path: "/warranty" },
-  { label: "FAQ", path: "/Faq" },
+  { label: "Dealership", path: "/Dealership" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -24,13 +25,13 @@ const SocialMediaLinks = [
     icons: <RiFacebookFill size={18} />,
     labels: "FaceBook",
     link: "",
-    color: "hover:text-blue-700",
+    color: "hover:text-primary",
   },
   {
     icons: <RiInstagramLine size={18} />,
     labels: "Insta",
     link: "",
-    color: "hover:text-red-600",
+    color: "hover:text-primary",
   },
 ];
 
@@ -49,7 +50,6 @@ const Navbar = () => {
         <ul className="hidden lg:flex items-center gap-7">
           {navLinks?.map((link) => (
             <li key={link.label} className="relative group">
-              {/* Normal Link */}
               {!link.children ? (
                 <Link
                   to={link.path}
@@ -63,18 +63,16 @@ const Navbar = () => {
                 </Link>
               ) : (
                 <>
-                  {/* Parent */}
-                  <span className="text-sm font-medium cursor-pointer text-muted-foreground group-hover:text-primary">
-                    {link.label}
+                  <span className="text-sm font-medium cursor-pointer text-muted-foreground group-hover:text-primary flex items-end gap-1">
+                    {link.label} <IoIosArrowDown />
                   </span>
 
-                  {/* Dropdown */}
-                  <div className="absolute top-full left-0 mt-2 w-44 bg-white border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="absolute top-full left-0 mt-2 w-44 bg-white border border-border shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}
                         to={child.path}
-                        className="block px-4 py-2 text-sm hover:bg-accent hover:text-primary"
+                        className="block px-4 py-2 text-sm hover:bg-[#CCFCFF] hover:text-[#043448]"
                       >
                         {child.label}
                       </Link>
@@ -85,18 +83,26 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <ul className="hidden lg:flex items-center gap-5">
-          {SocialMediaLinks?.map((mediaLinks: any) => (
-            <li key={mediaLinks?.labels}>
-              <a href={mediaLinks?.link} target="__blank">
-                <p className={`text-black font-bold ${mediaLinks?.color}`}>
-                  {mediaLinks?.icons}
-                </p>
-              </a>
-            </li>
-          ))}
-        </ul>
-
+        {/* Desktop nav */}
+        <div className="flex justify-between items-center gap-7">
+          <ul className="hidden lg:flex items-center gap-5">
+            {SocialMediaLinks?.map((mediaLinks: any) => (
+              <li key={mediaLinks?.labels}>
+                <a href={mediaLinks?.link} target="__blank">
+                  <p className={`text-black font-bold ${mediaLinks?.color}`}>
+                    {mediaLinks?.icons}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/contact"
+            className="hidden lg:inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
+          >
+            Get a Quote
+          </Link>
+        </div>
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
@@ -112,7 +118,10 @@ const Navbar = () => {
         <div className="lg:hidden border-t border-border bg-background animate-fade-in">
           <ul className="flex flex-col p-4 gap-1">
             {navLinks?.map((link) => (
-              <li key={link.label} className="relative group">
+              <li
+                key={link.label}
+                className="relative bg-transparent hover:bg-secondary text-black hover:text-[#043448]"
+              >
                 {!link.children ? (
                   <Link
                     to={link.path}
@@ -132,7 +141,7 @@ const Navbar = () => {
                         key={child.label}
                         to={child.path}
                         onClick={() => setOpen(false)}
-                        className="block px-8 py-2 text-sm text-muted-foreground hover:text-primary"
+                        className="block px-8 py-2 text-sm text-black hover:text-[#043448]"
                       >
                         {child.label}
                       </Link>
@@ -146,7 +155,7 @@ const Navbar = () => {
                 <li key={mediaLinks?.labels}>
                   <a href={mediaLinks?.link} target="__blank">
                     <span
-                      className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors hover:text-primary hover:bg-accent text-black ${mediaLinks?.color}`}
+                      className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors hover:text-primary hover:bg-secondary text-black ${mediaLinks?.color}`}
                     >
                       {mediaLinks?.icons}
                     </span>
@@ -154,6 +163,12 @@ const Navbar = () => {
                 </li>
               ))}
             </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
+            >
+              Get a Quote
+            </Link>
           </ul>
         </div>
       )}

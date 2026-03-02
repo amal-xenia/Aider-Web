@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Zap } from "lucide-react";
 import logo from "/assets/aider-logo.png";
+import footerLogo from "/assets/Kaizen-Logo.png";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => (
   <footer ref={ref} className="bg-foreground text-background">
@@ -11,7 +12,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           <div className="flex items-center gap-2 mb-4">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src={logo}
+                src={footerLogo}
                 alt="Aider Logo"
                 className="w-32 sm:w-40 lg:w-44"
               />
@@ -61,6 +62,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
                 our Work
               </Link>
             </li>
+            <li>
+              <Link to="/Faq" className="hover:opacity-100 transition-opacity">
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -76,8 +82,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
               </Link>
             </li>
             <li>
-              <Link to="/Faq" className="hover:opacity-100 transition-opacity">
-                FAQ
+              <Link
+                to="/Dealership"
+                className="hover:opacity-100 transition-opacity"
+              >
+                Dealership
               </Link>
             </li>
             <li>
