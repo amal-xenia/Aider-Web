@@ -72,7 +72,7 @@ export const products: Product[] = [
     id: "AiderADT107M",
     name: "Aider AD T107M",
     shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection of Buildings & Allied Structures",
+      "Aider ESE Heavy Duty Lightning Protection System model: AD T62M ",
     description:
       "Aider ESE Heavy Duty Lightning Protection System model: AD T62M with independently tested and configured with lightning terminal as spheroid. This consists of an electrically isolated HE-30 (6082) alloy panel body surrounding an earthed central fin. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone and uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the“Switching Impulse Voltage and” Direct Voltage of 70 kv.",
     image: AiderADT107M,
@@ -93,8 +93,7 @@ export const products: Product[] = [
   {
     id: "AiderADUG20",
     name: "Aider AD UG20",
-    shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection of Buildings & Allied Structures",
+    shortDescription: "Aider Ultra Grip Backfill",
 
     description:
       "<p>Aider Ultra Grip Backfill is low resistance high conductivity mineral combination, which effectively reduces the earth resistance in difficult soil conditions. During installation with proper water pouring, the ultra grip compound will convert to the GEL formation and its quality to retain the moisture up to 20 X of its dry volume. It also creates a GEL protective layer surrounding the electrode. Being non soluble in water, it stays at the electrode and is not washed out by the rain water.</p>" +
@@ -232,8 +231,7 @@ export const products: Product[] = [
     id: "AiderADCPE",
     name: "Aider AD CPE 2&3",
     subname: "Copper Pipe Earth Electrodes:",
-    shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection of Buildings & Allied Structures",
+    shortDescription: "Aider Pressed Copper Pipe Earth Electrode",
 
     description:
       "<b> Aider Pressed Copper Pipe Earth Electrode</b> is a high-performance grounding/Earthing solution designed to provide low-resistance earthing for electrical systems. It ensures safety, equipment protection, and stable system performance by efficiently dissipating fault currents into the ground.  It manufactured from high-conductivity copper pipes that are mechanically pressed to enhance strength and durability. They are widely used in residential, commercial, and industrial installations where reliable earthing is essential and are manufactured in accordance with applicable Indian and international grounding standards such as: <b> IEC 62561, IEEE 80, BS 7430,IS 3043</b>",
@@ -285,8 +283,7 @@ export const products: Product[] = [
     id: "AiderADCBR",
     name: "Aider AD CBR",
     subname: "Aider Copper Bonded Rods",
-    shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection of Buildings & Allied Structures",
+    shortDescription: "Aider Copper-bonded rods",
     description:
       "Aider Copper-bonded rods are high-performance earthing electrodes designed for<b> effective electrical grounding, lightning protection systems, and industrial and residential electrical installations.</b> These rods provide low-resistance earth connections and ensure <b>stable system</b> performance under varying soil and environmental conditions.",
 
@@ -365,8 +362,7 @@ export const products: Product[] = [
     name: "Aider APC18 & APC24",
     subname:
       "Poly Plastic Earth Pit Chamber Covers – Durable & Sustainable Solutions",
-    shortDescription:
-      "Poly Plastic Earth Pit Chamber Covers – Durable & Sustainable Solutions",
+    shortDescription: "Aider Poly Plastic Earth Pit Chamber Covers",
     description:
       "<b>Aider Poly Plastic Earth Pit Chamber Covers</b> are engineered to provide strong, lightweight, and corrosion-resistant protection for electrical, telecom, and water utility pits. Designed for modern infrastructure, these covers ensure safety, durability, and ease of installation.Available Sizes are 18 x 18, 24 x 24, 30 x 30",
 

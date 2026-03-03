@@ -126,13 +126,13 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           rights reserved.
         </span>
 
-        <Link
+        {/* <Link
           to="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID"
           target="_blank"
           className="btn-primary"
-        >
-          <span>⭐ Leave a Google Review </span>
-        </Link>
+        > */}
+        <span>⭐ Leave a Google Review </span>
+        {/* </Link> */}
       </div>
     </div>
   </footer>

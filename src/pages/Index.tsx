@@ -136,7 +136,7 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section id="stats" className="bg-primary relative overflow-hidden">
+      <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -173,7 +173,7 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="section-padding bg-section-alt">
+      <section id="stats" className="section-padding bg-section-alt">
         <div className="container-max">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <motion.span
