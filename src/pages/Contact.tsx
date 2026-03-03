@@ -67,7 +67,7 @@ const Contact = () => {
       subject: data?.subject,
       message: data?.message,
     };
-    mutateContactUs.mutate(formData);
+    // mutateContactUs.mutate(formData);
   };
 
   const inputClasses =

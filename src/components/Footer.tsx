@@ -125,7 +125,14 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           © {new Date().getFullYear()} Aider Lightning Protection Systems. All
           rights reserved.
         </span>
-        {/* <span>IS/IEC 62305 Certified Solutions</span> */}
+
+        <Link
+          to="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID"
+          target="_blank"
+          className="btn-primary"
+        >
+          <span>⭐ Leave a Google Review </span>
+        </Link>
       </div>
     </div>
   </footer>

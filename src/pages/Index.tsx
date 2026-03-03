@@ -84,12 +84,11 @@ const Index = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-xs sm:text-lg text-white/80 mb-6 max-w-2xl mx-auto tracking-wider"
           >
-            Advanced Lightning Protection Protecting Lives. Safeguarding
-            Infrastructure. Securing Critical Assets. We provide advanced Early
-            Streamer Emission (ESE) lightning protection systems designed to
-            deliver superior safety and performance. Our solutions are
-            engineered to protect residential, commercial, and industrial
-            structures from the devastating impact of lightning strikes
+            We provide advanced Early Streamer Emission (ESE) lightning
+            protection systems designed to deliver superior safety and
+            performance. Our solutions are engineered to protect residential,
+            commercial, and industrial structures from the devastating impact of
+            lightning strikes
           </motion.p>
 
           <motion.div
@@ -139,8 +138,8 @@ const Index = () => {
       {/* Stats */}
       <section id="stats" className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
-        <div className="container-max px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {homePage?.stats?.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -154,19 +153,19 @@ const Index = () => {
                 <div
                   className={`font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground ${stat?.icon ? "flex flex-col items-center" : "block"}`}
                 >
-                  {stat.icon ? (
-                    <img
-                      src={stat.icon}
-                      alt={stat.label}
-                      className="h-8 sm:h-14 w-10 sm:w-16 object-contain"
-                    />
-                  ) : (
-                    stat.value
-                  )}
+                  <img
+                    src={stat.icon}
+                    alt={stat.label}
+                    className="h-11 sm:h-14 w-12 sm:w-16 object-contain"
+                  />
                 </div>
-                <div className="text-xs sm:text-sm text-primary-foreground/70 mt-1 font-medium">
+                <div className="text-xs sm:text-sm text-primary-foreground/70 my-1 font-medium">
                   {stat.label}
                 </div>
+                <p
+                  className="text-white text-xs sm:text-sm"
+                  dangerouslySetInnerHTML={{ __html: stat?.description }}
+                />
               </motion.div>
             ))}
           </div>
@@ -330,7 +329,10 @@ const Index = () => {
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
                 Why Choose Aider
               </span>
-              <h3 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-5">
+                Trusted by Industries Across India
+              </h2>
+              <h3 className="font-display text-xl sm:text-xl font-bold text-foreground mb-6">
                 20+ Years of Proven Experience
               </h3>
               <p className="text-muted-foreground mb-8">
@@ -338,6 +340,9 @@ const Index = () => {
                 grounding systems, Aider Lightning Protection delivers trusted,
                 field-tested solutions designed to perform in the most demanding
                 environments.
+                <br />
+                We combine technical knowledge, quality materials, and precision
+                engineering to ensure maximum safety for every project.
               </p>
               <ul className="space-y-4">
                 {homePage?.WhyChooseUs?.map((item, i) => (
