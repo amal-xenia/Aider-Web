@@ -7,17 +7,17 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
+  { label: "About", path: "/About" },
   {
     label: "Products",
     children: [
-      { label: "All Products", path: "/products" },
+      { label: "All Products", path: "/Products" },
       { label: "Our Work", path: "/Work" },
     ],
   },
-  { label: "Warranty", path: "/warranty" },
+  { label: "Warranty", path: "/Warranty" },
   { label: "Dealership", path: "/Dealership" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/Contact" },
 ];
 
 const SocialMediaLinks = [
@@ -97,7 +97,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Link
-            to="/contact"
+            to="/Contact"
             className="hidden lg:inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
           >
             Get a Quote
@@ -164,7 +164,7 @@ const Navbar = () => {
               ))}
             </div>
             <Link
-              to="/contact"
+              to="/Contact"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
             >
               Get a Quote

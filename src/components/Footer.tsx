@@ -40,7 +40,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
             </li>
             <li>
               <Link
-                to="/about"
+                to="/About"
                 className="hover:opacity-100 transition-opacity"
               >
                 About Us
@@ -48,17 +48,14 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
             </li>
             <li>
               <Link
-                to="/products"
+                to="/Products"
                 className="hover:opacity-100 transition-opacity"
               >
                 Products
               </Link>
             </li>
             <li>
-              <Link
-                to="/gallery"
-                className="hover:opacity-100 transition-opacity"
-              >
+              <Link to="/Work" className="hover:opacity-100 transition-opacity">
                 our Work
               </Link>
             </li>
@@ -75,7 +72,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           <ul className="space-y-2 text-sm opacity-70">
             <li>
               <Link
-                to="/warranty"
+                to="/Warranty"
                 className="hover:opacity-100 transition-opacity"
               >
                 Warranty Registration
@@ -91,15 +88,13 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/Contact"
                 className="hover:opacity-100 transition-opacity"
               >
                 Contact Us
               </Link>
             </li>
-            <li>
-              <span>Technical Support</span>
-            </li>
+            <li></li>
           </ul>
         </div>
 
@@ -109,17 +104,17 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
             <li className="flex items-start gap-2">
               <MapPin size={16} className="mt-0.5 shrink-0" />
               <span>
-                Kaizen Star Technologies, 52/1783-A1, Janatha Road, Vyttila,
-                Ernakulam, Kerala, India
+                Kaizen Star Technologies 443/B, Arathy centre Next to Canara
+                Bank, Kureekkad. Tripunithura, Ernakulam
               </span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="shrink-0" />
-              <span>+91 9447575107 | +971 9072846444</span>
+              <span>+91 9947846444 | +91 9072846444</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="shrink-0" />
-              <span>jinsonclassic@gmail.com | kaizenstarindia@gmail.com</span>
+              <span> kaizenstarindia@gmail.com</span>
             </li>
           </ul>
         </div>

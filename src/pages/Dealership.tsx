@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const dealerSchema = z.object({
   // Personal Information
@@ -127,21 +129,34 @@ Phone: +91 44 2345 6789
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       <section className="bg-section-alt section-padding">
         <div className="container-max text-center max-w-2xl mx-auto">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
+          >
             Partnership
-          </span>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
+          >
             Become a Dealer
-          </h1>
-          <p className="text-muted-foreground">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="text-muted-foreground"
+          >
             Join our network of successful dealers. Fill out the application
             form below. Our team will review your application and contact you
             within 2-3 business days.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -339,6 +354,14 @@ Phone: +91 44 2345 6789
                     )}
                   </div>
                   <div>
+                    <label className={labelClasses}>Website</label>
+                    <input
+                      {...register("website")}
+                      type="text"
+                      className={inputClasses}
+                    />
+                  </div>
+                  <div>
                     <label className={labelClasses}>
                       Business Address <span className="text-red-600">*</span>
                     </label>
@@ -354,14 +377,14 @@ Phone: +91 44 2345 6789
                   </div>
                 </div>
               </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
-              >
-                Submit Application
-              </button>
-
+              <Link to="/ThankYou">
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
+                >
+                  Submit Application
+                </button>
+              </Link>
               <p className="text-xs text-muted-foreground text-center">
                 Fields marked with <span className="text-destructive">*</span>{" "}
                 are required
@@ -370,8 +393,6 @@ Phone: +91 44 2345 6789
           )}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

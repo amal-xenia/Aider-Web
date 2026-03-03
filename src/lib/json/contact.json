@@ -4,19 +4,21 @@
       "icon": "MapPin",
       "title": "Visit Us",
       "lines1": [
-        "Kaizen Star Technologies, 52/1783-A1, Janatha Road, Vyttila, Ernakulam, Kerala, India"
+        "Kaizen Star Technologies 443/B, Arathy centre Next to Canara Bank, Kureekkad, Tripunithura, Ernakulam "
       ],
-      "lines2": ["Kaizen Star Technologies, LLC P.O. Box 231527, Dubai,UAE."]
+      "lines2": [
+        "Kaizen Star Technologies LLC PO Box: 231527, Near Al Nadha Metro Station, Al Qusais, UAE Dubai, UAE"
+      ]
     },
     {
       "icon": "Phone",
       "title": "Call Us",
-      "lines1": ["+91 9447575107", "+971 9072846444"]
+      "lines1": ["+91 9947846444", "+91 9072846444", "+971 4 3335427"]
     },
     {
       "icon": "Mail",
       "title": "Email Us",
-      "lines1": ["jinsonclassic@gmail.com", "kaizenstarindia@gmail.com"]
+      "lines1": ["kaizenstarindia@gmail.com", "info@kaizendubai.com"]
     }
   ]
 }

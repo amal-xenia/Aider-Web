@@ -44,8 +44,6 @@ const fadeUp = {
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       {/* Hero Section */}
       <section className="relative h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -65,7 +63,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+            className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
           >
             Advanced Lightning Protection
           </motion.h1>
@@ -74,10 +72,23 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-lg sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
+            className="text-sm sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
           >
             Protecting Lives. Safeguarding Infrastructure. Securing Critical
             Assets
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-xs sm:text-lg text-white/80 mb-6 max-w-2xl mx-auto tracking-wider"
+          >
+            Advanced Lightning Protection Protecting Lives. Safeguarding
+            Infrastructure. Securing Critical Assets. We provide advanced Early
+            Streamer Emission (ESE) lightning protection systems designed to
+            deliver superior safety and performance. Our solutions are
+            engineered to protect residential, commercial, and industrial
+            structures from the devastating impact of lightning strikes
           </motion.p>
 
           <motion.div
@@ -426,8 +437,6 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

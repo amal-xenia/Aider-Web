@@ -95,8 +95,6 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-primary/5 to-transparent pt-20 pb-12">
         <div className="container-max px-4 sm:px-6 lg:px-8">
@@ -239,7 +237,6 @@ const FAQPage = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

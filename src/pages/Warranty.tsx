@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 const warrantySchema = z.object({
   customerName: z.string().trim().min(1, "Name is required").max(100),
@@ -15,7 +16,7 @@ const warrantySchema = z.object({
   productName: z.string().trim().min(1, "Product name is required").max(100),
   installationDate: z.string().min(1, "Installation date is required"),
   installationAddress: z.string().trim().min(1, "Address is required").max(300),
-  invoiceNumber: z.string().trim().min(1, "Invoice number is required").max(50),
+  suppliedThrough: z.string().trim().max(500).optional(),
   remarks: z.string().trim().max(500).optional(),
 });
 
@@ -63,7 +64,7 @@ PRODUCT DETAILS
 ----------------
 Product Name: ${formData.productName}
 Product Code: ${formData.productCode}
-Invoice Number: ${formData.invoiceNumber}
+Supplied Through: ${formData.suppliedThrough}
 Installation Date: ${formData.installationDate}
 
 INSTALLATION ADDRESS
@@ -103,26 +104,39 @@ Phone: +91 44 2345 6789
   };
 
   const inputClasses =
-    "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors";
+    "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-[#104A62] focus:border-[#104A62] transition-colors";
   const labelClasses = "block text-sm font-medium text-foreground mb-1.5";
   const errorClasses = "text-xs text-destructive mt-1";
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       <section className="bg-section-alt section-padding">
         <div className="container-max text-center max-w-2xl mx-auto">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
+          >
             Warranty
-          </span>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
+          >
             Warranty Registration
-          </h1>
-          <p className="text-muted-foreground">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="text-muted-foreground"
+          >
             Register your Aider product warranty. A warranty certificate will be
             available for download upon successful registration.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -166,7 +180,9 @@ Phone: +91 44 2345 6789
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className={labelClasses}>Full Name *</label>
+                  <label className={labelClasses}>
+                    Full Name <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("customerName")}
                     className={inputClasses}
@@ -179,7 +195,9 @@ Phone: +91 44 2345 6789
                   )}
                 </div>
                 <div>
-                  <label className={labelClasses}>Email *</label>
+                  <label className={labelClasses}>
+                    Email <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("email")}
                     type="email"
@@ -191,7 +209,9 @@ Phone: +91 44 2345 6789
                   )}
                 </div>
                 <div>
-                  <label className={labelClasses}>Phone *</label>
+                  <label className={labelClasses}>
+                    Phone <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("phone")}
                     className={inputClasses}
@@ -215,29 +235,33 @@ Phone: +91 44 2345 6789
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className={labelClasses}>Product Code *</label>
+                  <label className={labelClasses}>
+                    Product Code <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("productCode")}
                     className={inputClasses}
-                    placeholder="e.g. AIDER-ESE-001"
                   />
                   {errors.productCode && (
                     <p className={errorClasses}>{errors.productCode.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className={labelClasses}>Product Name *</label>
+                  <label className={labelClasses}>
+                    Product Name <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("productName")}
                     className={inputClasses}
-                    placeholder="e.g. ESE Lightning Arrester"
                   />
                   {errors.productName && (
                     <p className={errorClasses}>{errors.productName.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className={labelClasses}>Installation Date *</label>
+                  <label className={labelClasses}>
+                    Installation Date <span className="text-red-600">*</span>
+                  </label>
                   <input
                     {...register("installationDate")}
                     type="date"
@@ -250,22 +274,19 @@ Phone: +91 44 2345 6789
                   )}
                 </div>
                 <div>
-                  <label className={labelClasses}>Invoice Number *</label>
+                  <label className={labelClasses}>Supplied Through</label>
                   <input
-                    {...register("invoiceNumber")}
+                    {...register("suppliedThrough")}
                     className={inputClasses}
-                    placeholder="e.g. INV-2024-0001"
+                    placeholder="Dealer details"
                   />
-                  {errors.invoiceNumber && (
-                    <p className={errorClasses}>
-                      {errors.invoiceNumber.message}
-                    </p>
-                  )}
                 </div>
               </div>
 
               <div>
-                <label className={labelClasses}>Installation Address *</label>
+                <label className={labelClasses}>
+                  Installation Address <span className="text-red-600">*</span>
+                </label>
                 <textarea
                   {...register("installationAddress")}
                   className={inputClasses}
@@ -299,8 +320,6 @@ Phone: +91 44 2345 6789
           )}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

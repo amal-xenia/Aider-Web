@@ -4,13 +4,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { toast } from "sonner";
 import contactUs from "@/lib/json/contact.json";
+import { useMutation } from "@tanstack/react-query";
+import { ContactUs } from "@/lib/api";
+import { useState } from "react";
+import Spinner from "@/components/ui/spinner";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email").max(255),
-  phone: z.string().trim().min(10, "Enter a valid phone number").max(15),
+  phoneNumber: z.string().trim().min(10, "Enter a valid phone number").max(15),
   subject: z.string().trim().min(1, "Subject is required").max(200),
   message: z.string().trim().min(1, "Message is required").max(1000),
 });
@@ -23,6 +29,9 @@ const iconMap: any = {
   MapPin,
 };
 const Contact = () => {
+  const navigate = useNavigate();
+  const [isSubmit, setisSubmit] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -32,32 +41,69 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
+  const mutateContactUs = useMutation({
+    onMutate: () => {
+      setisSubmit(true);
+    },
+    mutationFn: async (data) => {
+      const response = await ContactUs(data);
+      return response;
+    },
+    onSuccess: () => {
+      toast.success("Sent Successfully.");
+      navigate("/ThankYou");
+      reset();
+    },
+    onSettled: () => {
+      setisSubmit(false);
+    },
+  });
+
   const onSubmit = (data: ContactFormData) => {
-    toast.success("Thank you! We'll get back to you within 24 hours.");
-    reset();
+    const formData = {
+      name: data?.name,
+      email: data?.email,
+      phoneNumber: data?.phoneNumber,
+      subject: data?.subject,
+      message: data?.message,
+    };
+    mutateContactUs.mutate(formData);
   };
 
   const inputClasses =
-    "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors";
+    "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-[#104A62] focus:border-[#104A62] transition-colors";
   const labelClasses = "block text-sm font-medium text-foreground mb-1.5";
   const errorClasses = "text-xs text-destructive mt-1";
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       <section className="bg-section-alt section-padding">
         <div className="container-max text-center max-w-2xl mx-auto">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
+          >
             Contact
-          </span>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
+          >
             Get In Touch
-          </h1>
-          <p className="text-muted-foreground">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="text-muted-foreground"
+          >
             Have a project that needs lightning protection? Reach out to our
             team for a free consultation.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -111,7 +157,9 @@ const Contact = () => {
               >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className={labelClasses}>Full Name *</label>
+                    <label className={labelClasses}>
+                      Full Name <span className="text-red-600">*</span>
+                    </label>
                     <input
                       {...register("name")}
                       className={inputClasses}
@@ -122,7 +170,9 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
-                    <label className={labelClasses}>Email *</label>
+                    <label className={labelClasses}>
+                      Email <span className="text-red-600">*</span>
+                    </label>
                     <input
                       {...register("email")}
                       type="email"
@@ -134,30 +184,33 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
-                    <label className={labelClasses}>Phone *</label>
+                    <label className={labelClasses}>
+                      Phone <span className="text-red-600">*</span>
+                    </label>
                     <input
-                      {...register("phone")}
+                      {...register("phoneNumber")}
                       className={inputClasses}
-                      placeholder="+91 98765 43210"
                     />
-                    {errors.phone && (
-                      <p className={errorClasses}>{errors.phone.message}</p>
+                    {errors.phoneNumber && (
+                      <p className={errorClasses}>
+                        {errors.phoneNumber.message}
+                      </p>
                     )}
                   </div>
                   <div>
-                    <label className={labelClasses}>Subject *</label>
-                    <input
-                      {...register("subject")}
-                      className={inputClasses}
-                      placeholder="e.g. LPS for new factory"
-                    />
+                    <label className={labelClasses}>
+                      Subject <span className="text-red-600">*</span>
+                    </label>
+                    <input {...register("subject")} className={inputClasses} />
                     {errors.subject && (
                       <p className={errorClasses}>{errors.subject.message}</p>
                     )}
                   </div>
                 </div>
                 <div>
-                  <label className={labelClasses}>Message *</label>
+                  <label className={labelClasses}>
+                    Message <span className="text-red-600">*</span>
+                  </label>
                   <textarea
                     {...register("message")}
                     className={inputClasses}
@@ -170,9 +223,15 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
+                  className="w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-white text-foreground transition-all hover:opacity-90"
                 >
-                  Send Message
+                  {isSubmit ? (
+                    <span className="flex flex-col items-center">
+                      <Spinner />
+                    </span>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             </div>
@@ -182,7 +241,7 @@ const Contact = () => {
           <div className="mt-14 rounded-2xl overflow-hidden border border-border h-[400px]">
             <iframe
               title="Aider LPS Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.4927099691464!2d80.2327!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MMKwMTMnNTcuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sKaizen+Star+Technologies+443/B,+Arathy+Centre,+Next+to+Canara+Bank,+Kureekkad,+Tripunithura,+Ernakulam"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -193,8 +252,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

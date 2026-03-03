@@ -6,6 +6,7 @@ import gallery3 from "/assets/gallery-3.jpg";
 import gallery4 from "/assets/gallery-4.jpg";
 import gallery5 from "/assets/gallery-5.jpg";
 import gallery6 from "/assets/gallery-6.jpg";
+import { motion } from "framer-motion";
 
 const galleryItems = [
   {
@@ -30,20 +31,33 @@ const galleryItems = [
 
 const OurWork = () => (
   <div className="min-h-screen">
-    <Navbar />
-
     <section className="bg-section-alt section-padding">
       <div className="container-max text-center max-w-2xl mx-auto">
-        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
+        >
           Gallery
-        </span>
-        <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+        </motion.span>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
+        >
           Our Work
-        </h1>
-        <p className="text-muted-foreground">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.5 }}
+          className="text-muted-foreground"
+        >
           Browse through our completed projects across various industries and
           locations.
-        </p>
+        </motion.p>
       </div>
     </section>
 
@@ -76,8 +90,6 @@ const OurWork = () => (
         </div>
       </div>
     </section>
-
-    <Footer />
   </div>
 );
 
