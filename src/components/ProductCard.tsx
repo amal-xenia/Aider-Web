@@ -11,7 +11,7 @@ const ProductCard = forwardRef<HTMLAnchorElement, ProductCardProps>(
   ({ product }, ref) => (
     <Link
       ref={ref}
-      to={`/product/${product.id}`}
+      to={`/Product/${product.id}`}
       className="group bg-card rounded-xl border border-border overflow-hidden transition-all hover:shadow-lg hover:border-primary/30"
     >
       <div className="aspect-square overflow-hidden bg-muted">

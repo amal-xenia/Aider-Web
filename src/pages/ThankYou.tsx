@@ -92,7 +92,7 @@ const ThankYou = () => {
             </Link>
 
             <Link
-              to="/products"
+              to="/Products"
               className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Explore Products

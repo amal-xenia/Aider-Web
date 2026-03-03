@@ -10,6 +10,7 @@ import {
   Zap,
   CheckCircle2,
 } from "lucide-react";
+import EnquiryPopUp from "@/components/content/EnquiryPopup/EnquiryPopup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -352,43 +353,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary section-padding relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-        <div className="container-max text-center relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fadeUp}
-          >
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Work With Us?
-            </h2>
-            <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
-              Partner with India's most trusted lightning protection company
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-8 py-4 text-sm font-semibold text-foreground transition-all hover:opacity-90 hover:shadow-lg"
-              >
-                Get in Touch
-              </motion.a>
-              <motion.a
-                href="/products"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
-              >
-                Explore Products
-              </motion.a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <EnquiryPopUp />
     </div>
   );
 };

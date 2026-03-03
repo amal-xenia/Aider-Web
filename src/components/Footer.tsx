@@ -56,7 +56,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
             </li>
             <li>
               <Link to="/Work" className="hover:opacity-100 transition-opacity">
-                our Work
+                Our Work
               </Link>
             </li>
             <li>

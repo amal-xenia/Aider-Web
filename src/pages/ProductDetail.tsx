@@ -3,6 +3,7 @@ import { ArrowLeft, Download, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { products } from "@/data/products";
+import EnquiryPopUp from "@/components/content/EnquiryPopup/EnquiryPopup";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -40,7 +41,7 @@ const ProductDetail = () => {
       <section className="section-padding">
         <div className="container-max">
           <Link
-            to="/products"
+            to="/Products"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors"
           >
             <ArrowLeft size={16} /> Back to Products
@@ -255,20 +256,7 @@ const ProductDetail = () => {
           )}
 
           {/* CTA */}
-          <div className="mt-16 bg-accent rounded-2xl p-8 sm:p-12 text-center">
-            <h3 className="font-display text-2xl font-bold text-accent-foreground mb-3">
-              Interested in this product?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Get in touch for pricing, bulk orders, or technical consultation.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
-            >
-              Contact Sales
-            </Link>
-          </div>
+          <EnquiryPopUp />
         </div>
       </section>
     </div>

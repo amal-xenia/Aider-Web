@@ -22,7 +22,7 @@ function RootLayout() {
       "/Faq",
       "/Contact",
     ].some((route) => location.pathname.startsWith(route)) &&
-    !location.pathname.startsWith("/product/");
+    !location.pathname.startsWith("/Product/");
 
   const shouldHideLayout =
     hideLayoutRoutes.includes(location.pathname) || isNotFoundPage;

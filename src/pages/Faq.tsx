@@ -223,7 +223,7 @@ const FAQPage = () => {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link
-                    to="/contact"
+                    to="/Contact"
                     className="hover:opacity-100 transition-opacity"
                   >
                     <button className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">

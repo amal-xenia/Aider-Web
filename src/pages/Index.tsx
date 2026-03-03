@@ -24,6 +24,7 @@ import heroBg from "/assets/hero-bg.png";
 import homePage from "@/lib/json/homePage.json";
 import { Testimonial } from "@/components/content/testimonial";
 import { IoIosArrowDown } from "react-icons/io";
+import EnquiryPopUp from "@/components/content/EnquiryPopup/EnquiryPopup";
 
 const iconMap = {
   Shield,
@@ -98,14 +99,14 @@ const Index = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/contact"
+              to="/Contact"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-white transition-all hover:opacity-90"
             >
               Request a Quote <ArrowRight size={16} />
             </Link>
 
             <Link
-              to="/products"
+              to="/Products"
               className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Explore Products
@@ -306,7 +307,7 @@ const Index = () => {
             className="text-center mt-10"
           >
             <Link
-              to="/products"
+              to="/Products"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
             >
               View All Products <ArrowRight size={16} />
@@ -404,39 +405,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary section-padding relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-        <div className="container-max text-center relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fadeUp}
-          >
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Need Lightning Protection for Your Project?
-            </h2>
-            <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
-              Get a free consultation and customized quote from our expert team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-8 py-4 text-sm font-semibold text-foreground transition-all hover:opacity-90 hover:shadow-lg"
-              >
-                Contact Us Today <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/warranty"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
-              >
-                Register Warranty
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <EnquiryPopUp />
     </div>
   );
 };
