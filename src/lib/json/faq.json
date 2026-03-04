@@ -1,0 +1,54 @@
+{
+  "faq": [
+    {
+      "id": 1,
+      "category": "general",
+      "question": "What is an ESE Lightning Arrestor?",
+      "answer1": "An Early Streamer Emission (ESE) Lightning Arrestor is an advanced lightning protection device designed to protect buildings, industries, and critical infrastructure from direct lightning strikes. Unlike conventional lightning rods, an ESE air terminal actively enhances the lightning capture process by emitting an upward leader earlier than standard systems."
+    },
+    {
+      "id": 2,
+      "category": "work",
+      "question": "How Does an ESE Lightning Arrestor Work?",
+      "answer": {
+        "intro": "When a thundercloud builds up electrical charge, a downward leader travels toward the ground. The ESE Lightning Arrestor:",
+        "steps": [
+          "Senses the electrical field increase during storm conditions.",
+          "Generates high-voltage pulses internally (passive, self-energized system).",
+          "Emits an upward streamer earlier than conventional air terminals.",
+          "Intercepts the lightning strike at a higher point, safely capturing it.",
+          "Conducts the lightning current safely to earth through down conductors and a properly designed earthing system."
+        ],
+        "conclusion": "This early emission increases the effective protection radius, reducing the number of air terminals required."
+      }
+    },
+    {
+      "id": 3,
+      "category": "general",
+      "question": "Why Choose ESE Lightning Protection?",
+      "answer": {
+        "steps": [
+          "Enhanced Safety.",
+          "Cost-Effective Area Coverage",
+          "Reduced Installation Complexity",
+          "Reliable Performance During Severe Storms"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "category": "features",
+      "question": "What are features of ESE Lightning Arrestor?",
+      "answer": {
+        "steps": [
+          "Advanced Early Streamer Emission Technology",
+          "Wider Protection Radius",
+          "Complies with NF C 17-102 Standard",
+          "Maintenance-Free Operation",
+          "Suitable for Residential, Commercial & Industrial Applications",
+          "Long Service Life with Corrosion-Resistant Materials"
+        ]
+      }
+    }
+  ]
+}

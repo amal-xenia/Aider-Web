@@ -10,7 +10,7 @@ import { ContactUs } from "@/lib/api";
 import { useState } from "react";
 import Spinner from "@/components/ui/spinner";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const contactSchema = z.object({
@@ -221,6 +221,7 @@ const Contact = () => {
                     <p className={errorClasses}>{errors.message.message}</p>
                   )}
                 </div>
+                {/* <Link to="/ThankYou"> */}
                 <button
                   type="submit"
                   className="w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-white text-foreground transition-all hover:opacity-90"
@@ -233,6 +234,7 @@ const Contact = () => {
                     "Send Message"
                   )}
                 </button>
+                {/* </Link> */}
               </form>
             </div>
           </div>

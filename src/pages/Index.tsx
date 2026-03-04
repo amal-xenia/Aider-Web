@@ -146,7 +146,7 @@ const Index = () => {
                     className="h-11 sm:h-14 w-12 sm:w-16 object-contain"
                   />
                 </div>
-                <div className="text-xs sm:text-sm text-primary-foreground/70 my-1 font-medium">
+                <div className="text-md sm:text-md text-primary-foreground/70 my-1 font-medium">
                   {stat.label}
                 </div>
                 <p

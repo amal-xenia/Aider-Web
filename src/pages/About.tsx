@@ -47,14 +47,14 @@ const About = () => {
 
   const milestones = [
     {
-      year: "2010",
+      year: "2006",
       title: "Founded",
       desc: "Started as a team of passionate electrical engineers",
     },
     {
-      year: "2015",
+      year: "2010",
       title: "Expansion",
-      desc: "Opened manufacturing facility in Chennai",
+      desc: "Opened manufacturing facility",
     },
     {
       year: "2018",
@@ -99,7 +99,7 @@ const About = () => {
             className="text-muted-foreground text-md sm:text-lg leading-relaxed"
           >
             Aider Lightning Protection Systems has been at the forefront of
-            lightning safety solutions for over 15 years.
+            lightning safety solutions for over 20 years.
           </motion.p>
         </div>
       </section>
@@ -154,7 +154,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      {/* <section className="section-padding bg-section-alt">
+      <section className="section-padding bg-section-alt">
         <div className="container-max">
           <motion.div
             initial="hidden"
@@ -198,10 +198,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Company Timeline */}
-      {/* <section className="section-padding">
+      <section className="section-padding">
         <div className="container-max">
           <motion.div
             initial="hidden"
@@ -254,7 +254,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Our Story */}
       <section className="px-4 sm:px-6 pb-16">

@@ -4,6 +4,7 @@ import { ChevronDown, Search, HelpCircle, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import faqs from "../lib/json/faq.json";
 
 const FAQPage = () => {
   const [openItems, setOpenItems] = useState({});
@@ -13,68 +14,8 @@ const FAQPage = () => {
   const categories = [
     { id: "all", name: "All Questions", count: 12 },
     { id: "general", name: "General", count: 4 },
-    { id: "account", name: "Account & Billing", count: 3 },
-    { id: "technical", name: "Technical Support", count: 3 },
-    { id: "product", name: "Product Features", count: 2 },
-  ];
-
-  const faqs = [
-    {
-      id: 1,
-      category: "general",
-      question: "What is your service and how does it work?",
-      answer:
-        "Our service provides a comprehensive platform for managing your business needs. We offer intuitive tools for task management, team collaboration, and project tracking. Simply sign up, create your workspace, and start adding your team members and projects.",
-    },
-    {
-      id: 2,
-      category: "general",
-      question: "Is there a free trial available?",
-      answer:
-        "Yes! We offer a 14-day free trial with full access to all features. No credit card required. After the trial, you can choose from our flexible pricing plans that best suit your needs.",
-    },
-    {
-      id: 3,
-      category: "account",
-      question: "How do I cancel my subscription?",
-      answer:
-        'You can cancel your subscription anytime from your account settings. Go to Billing > Subscription and click "Cancel Subscription". Your access will continue until the end of your current billing period.',
-    },
-    {
-      id: 4,
-      category: "account",
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are processed securely through our payment partners.",
-    },
-    {
-      id: 5,
-      category: "technical",
-      question: "Is my data secure?",
-      answer:
-        "Absolutely. We use enterprise-grade encryption for all data transmission and storage. We are GDPR compliant and undergo regular security audits. Your data privacy and security are our top priorities.",
-    },
-    {
-      id: 6,
-      category: "technical",
-      question: "Which platforms do you support?",
-      answer:
-        "Our platform is web-based and works on all modern browsers. We also offer native mobile apps for iOS and Android, and desktop apps for Windows and Mac.",
-    },
-    {
-      id: 7,
-      category: "product",
-      question: "Can I integrate with other tools?",
-      answer:
-        "Yes! We offer integrations with popular tools like Slack, Google Workspace, Microsoft Teams, Trello, and many more through our API. Check our integrations page for the complete list.",
-    },
-    {
-      id: 8,
-      category: "product",
-      question: "Do you offer API access?",
-      answer:
-        "Yes, we provide a comprehensive REST API for developers. You can build custom integrations, automate workflows, and extend our platform functionality. API documentation is available in our developer portal.",
-    },
+    { id: "work", name: "Product Working", count: 3 },
+    { id: "features", name: "Product Features", count: 2 },
   ];
 
   const toggleItem = (id) => {
@@ -84,7 +25,7 @@ const FAQPage = () => {
     }));
   };
 
-  const filteredFaqs = faqs.filter((faq) => {
+  const filteredFaqs = faqs?.faq?.filter((faq) => {
     const matchesCategory =
       activeCategory === "all" || faq.category === activeCategory;
     const matchesSearch =
@@ -159,9 +100,10 @@ const FAQPage = () => {
                         onClick={() => toggleItem(faq.id)}
                         className="w-full px-6 py-4 flex items-center justify-between text-left"
                       >
-                        <span className="font-medium text-foreground pr-8">
-                          {faq.question}
-                        </span>
+                        <div
+                          className="font-medium text-foreground pr-8"
+                          dangerouslySetInnerHTML={{ __html: faq.question }}
+                        />
                         <motion.div
                           animate={{ rotate: openItems[faq.id] ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
@@ -182,9 +124,23 @@ const FAQPage = () => {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-6 pb-4 text-muted-foreground border-t border-border pt-4">
-                              {faq.answer}
-                            </div>
+                            {faq?.answer1 ? (
+                              <div className="px-6 pb-4 text-muted-foreground border-t border-border pt-4">
+                                {faq.answer1}
+                              </div>
+                            ) : (
+                              <div className="px-6 pb-4 text-muted-foreground border-t border-border pt-4">
+                                <ul className="">
+                                  <p className="pb-2"> {faq?.answer?.intro}</p>
+                                  {faq?.answer?.steps?.map((step, index) => (
+                                    <li key={index} className="list-disc pb-1">
+                                      {step}
+                                    </li>
+                                  ))}
+                                </ul>
+                                <p>{faq?.answer?.conclusion}</p>
+                              </div>
+                            )}
                           </motion.div>
                         )}
                       </AnimatePresence>
