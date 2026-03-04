@@ -1,11 +1,11 @@
-import boxADT62M from "/assets/products/boxADT62M/mainImage.png";
+import boxADT62M from "/assets/products/boxADT62M/mainImage.jpg";
 import levelImage1 from "/assets/products/boxADT62M/LevelImage.jpeg";
-import AiderADT107M from "/assets/products/AiderADT107M/mainImage.png";
+import AiderADT107M from "/assets/products/AiderADT107M/mainImage.jpg";
 import levelImage2 from "/assets/products/AiderADT107M/levelImage.png";
-import AiderADUG20 from "/assets/products/AiderADUG20/mainImage.png";
-import AiderADCPE from "/assets/products/AiderADCPE/mainImage.png";
-import AiderADCBR from "/assets/products/AiderADCBR/mainImage.png";
-import mainImage from "/assets/products/AiderAPC18&APC24/mainImage.png";
+import AiderADUG20 from "/assets/products/AiderADUG20/mainImage.jpg";
+import AiderADCPE from "/assets/products/AiderADCPE/mainImage.jpg";
+import AiderADCBR from "/assets/products/AiderADCBR/mainImage.jpg";
+import mainImage from "/assets/products/AiderAPC18&APC24/mainImage.jpg";
 
 export interface Product {
   id: string;

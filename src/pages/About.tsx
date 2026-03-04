@@ -87,21 +87,19 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-6"
+            className="font-display text-3xl sm:text-5xl font-bold text-foreground mb-6"
           >
-            Your Trusted Partner in Lightning Safety
+            Trusted Lightning Safety Solutions
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.5 }}
-            className="text-muted-foreground text-lg leading-relaxed"
+            className="text-muted-foreground text-md sm:text-lg leading-relaxed"
           >
             Aider Lightning Protection Systems has been at the forefront of
-            lightning safety solutions for over 15 years. We design,
-            manufacture, supply, and install comprehensive protection systems
-            that meet international standards.
+            lightning safety solutions for over 15 years.
           </motion.p>
         </div>
       </section>
@@ -124,11 +122,10 @@ const About = () => {
                 Our Mission
               </h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              To provide world-class lightning protection solutions that
-              safeguard lives, structures, and equipment. We are committed to
-              using the latest technology and highest quality materials to
-              deliver systems that exceed international safety standards.
+            <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
+              Our mission is to provide reliable, high-performance lightning
+              protection and grounding solutions that protect lives, property,
+              and essential infrastructure.
             </p>
           </motion.div>
 
@@ -147,18 +144,17 @@ const About = () => {
                 Our Vision
               </h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              To be recognized as the most trusted and innovative lightning
-              protection company in Asia, setting benchmarks in safety, quality,
-              and customer satisfaction while making advanced protection
-              accessible to all industries.
+            <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
+              Our vision is to become a trusted leader in lightning protection,
+              earthing, and grounding solutions by continuously improving our
+              technology, expertise, and service quality.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="section-padding bg-section-alt">
+      {/* <section className="section-padding bg-section-alt">
         <div className="container-max">
           <motion.div
             initial="hidden"
@@ -202,10 +198,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Company Timeline */}
-      <section className="section-padding">
+      {/* <section className="section-padding">
         <div className="container-max">
           <motion.div
             initial="hidden"
@@ -258,10 +254,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Story */}
-      <section className="section-padding bg-section-alt">
+      <section className="px-4 sm:px-6 pb-16">
         <div className="container-max max-w-3xl mx-auto">
           <motion.div
             initial="hidden"
@@ -269,17 +265,17 @@ const About = () => {
             viewport={{ once: true }}
             custom={0}
             variants={fadeUp}
-            className="text-center mb-8"
+            className="text-center mb-6"
           >
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+            {/*  <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3">
               The Story
-            </span>
-            <h2 className="font-display text-3xl font-bold text-foreground">
-              Our Journey So Far
+            </span> */}
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">
+              Who We Are
             </h2>
           </motion.div>
 
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
             <motion.p
               initial="hidden"
               whileInView="visible"
@@ -287,11 +283,9 @@ const About = () => {
               custom={1}
               variants={fadeUp}
             >
-              Founded in 2010, Aider started as a small team of electrical
-              engineers passionate about solving one of nature's most
-              destructive forces — lightning. What began as a consultancy firm
-              quickly grew into a full-fledged manufacturer and installer of
-              lightning protection systems.
+              We are a team of lightning protection specialists with over 20
+              years of real-world experience in protecting buildings from
+              lightning damage.
             </motion.p>
 
             <motion.p
@@ -301,11 +295,11 @@ const About = () => {
               custom={2}
               variants={fadeUp}
             >
-              Over the years, we have successfully completed 500+ projects
-              across diverse industries including petrochemical, telecom,
-              renewable energy, healthcare, and commercial real estate. Our team
-              of certified engineers brings deep expertise in risk assessment,
-              system design, and installation.
+              At AideR Lightning Protection, we work closely with homeowners,
+              builders, contractors, and facility managers to design and install
+              reliable lightning safety systems. Our focus is simple — provides
+              the right protection for the right structure without
+              overcomplicating the process.
             </motion.p>
 
             <motion.p
@@ -315,40 +309,25 @@ const About = () => {
               custom={3}
               variants={fadeUp}
             >
-              Today, Aider is recognized as one of India's most trusted
-              lightning protection companies, serving clients across the nation
-              with an unwavering commitment to quality and safety.
+              We understand that lightning protection is not something most
+              people think about daily. But when storms hit, it becomes one of
+              the most important safety systems in a building. That’s why we
+              take every project seriously, whether it’s a small residential
+              property or a large industrial facility.
+            </motion.p>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={4}
+              variants={fadeUp}
+            >
+              Our team handles everything from site assessment and system design
+              to installation and long-term maintenance. We believe in doing the
+              job properly the first time — using quality materials, proven
+              technology, and safe installation practices.
             </motion.p>
           </div>
-
-          {/* Stats */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={4}
-            variants={fadeUp}
-            className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border"
-          >
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-primary">
-                500+
-              </div>
-              <div className="text-sm text-muted-foreground">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-primary">
-                15+
-              </div>
-              <div className="text-sm text-muted-foreground">Years</div>
-            </div>
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-primary">
-                50+
-              </div>
-              <div className="text-sm text-muted-foreground">Team Members</div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

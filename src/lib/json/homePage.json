@@ -3,17 +3,17 @@
     {
       "icon": "/assets/elements/hexagon.svg",
       "label": "Design + Safety",
-      "description": "Aider products were created for your safety <br class='hidden sm:block' /> and to fit modern architecture."
+      "description": "Aider products were created for your safety <br class='hidden lg:block' /> and to fit modern architecture."
     },
     {
       "icon": "/assets/elements/check.svg",
       "label": "Tested + Certified",
-      "description": "Aider Lightning Conductors are diligently tested <br class='hidden sm:block' /> and are in accordance with the latest NFC 17-102: 2011 standard."
+      "description": "Aider Lightning Conductors are diligently tested <br class='hidden lg:block' /> and are in accordance with the latest NFC 17-102: 2011 standard."
     },
     {
       "icon": "/assets/elements/lightning.svg",
       "label": "Lightning-fast delivery",
-      "description": "Aider products are shipped worldwide <br class='hidden sm:block' /> & lightning-fast."
+      "description": "Aider products are shipped worldwide <br class='hidden lg:block' /> & lightning-fast."
     }
   ],
   "services": [

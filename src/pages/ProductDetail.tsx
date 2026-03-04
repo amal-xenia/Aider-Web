@@ -64,30 +64,30 @@ const ProductDetail = () => {
                 {product.subname}
               </h3>
               <div
-                className="text-sm sm: text-muted-foreground text-justify leading-relaxed mb-6 space-y-4"
+                className="text-sm sm:text-base text-muted-foreground text-justify leading-relaxed mb-6 space-y-4"
                 dangerouslySetInnerHTML={{ __html: product.description }}
               />
 
               <div className="pb-6 text-muted-foreground sm:text-justify sm:leading-relaxed">
                 {product.Warranty && (
-                  <span className="flex flex-row items-center leading-relaxed gap-2 text-sm sm:">
+                  <span className="flex flex-row items-center leading-relaxed gap-2 text-sm sm:text-base">
                     Warranty :
                     <p
                       dangerouslySetInnerHTML={{
                         __html: product.Warranty,
                       }}
-                      className="text-sm sm:"
+                      className="text-sm sm:text-base"
                     />
                   </span>
                 )}
                 {product.Protection && (
-                  <span className="flex flex-row items-center leading-relaxed gap-2 text-sm sm:">
+                  <span className="flex flex-row items-center leading-relaxed gap-2 text-sm sm:text-base">
                     Standard Protection :
                     <p
                       dangerouslySetInnerHTML={{
                         __html: product.Protection,
                       }}
-                      className="text-sm sm:"
+                      className="text-sm sm:text-base"
                     />
                   </span>
                 )}
@@ -155,10 +155,10 @@ const ProductDetail = () => {
             </div>
           )}
           {product?.customtext && (
-            <h3 className="mt-2 text-sm sm:">{product?.customtext}</h3>
+            <h3 className="mt-2 text-sm sm:text-base">{product?.customtext}</h3>
           )}
           {product.comparison?.rows?.length > 0 && (
-            <div className="mt-8 md:mt-16 overflow-auto sm:">
+            <div className="mt-8 md:mt-16 overflow-auto sm:overflow-hidden">
               <h2 className="font-display text-lg sm:text-2xl font-bold text-foreground mb-6">
                 {product?.comparison?.heading}
               </h2>
@@ -208,16 +208,16 @@ const ProductDetail = () => {
               <h3 className="font-display text-lg font-bold text-foreground my-6">
                 {product.subTexts?.subHeading}
               </h3>
-              <p className="text-foreground text-sm sm: sm:text-justify leading-relaxed mb-6 space-y-4">
+              <p className="text-foreground text-sm sm:text-base sm:text-justify leading-relaxed mb-6 space-y-4">
                 {product.subTexts?.subDescription1}
               </p>
-              <ul className="mx-10 text-foreground text-sm sm: sm:text-justify leading-relaxed">
+              <ul className="mx-10 text-foreground text-sm sm:text-base sm:text-justify leading-relaxed">
                 {product.subTexts?.points?.map((points: any) => (
                   <li className="list-disc">{points?.point}</li>
                 ))}
               </ul>
               <p
-                className="text-foreground text-sm sm: text-justify leading-relaxed my-6 space-y-4"
+                className="text-foreground text-sm sm:text-base text-justify leading-relaxed my-6 space-y-4"
                 dangerouslySetInnerHTML={{
                   __html: product?.subTexts?.subDescription2,
                 }}

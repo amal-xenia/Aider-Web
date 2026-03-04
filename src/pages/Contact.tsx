@@ -113,7 +113,7 @@ const Contact = () => {
             {/* Contact Info Cards */}
             <div className="space-y-5">
               {contactUs?.contactInfo?.map((item) => {
-                const Icon = iconMap[item.icon]; // 👈 convert string → component
+                const Icon = iconMap[item.icon];
 
                 return (
                   <div

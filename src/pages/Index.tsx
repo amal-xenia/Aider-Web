@@ -64,7 +64,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+            className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
           >
             Advanced Lightning Protection
           </motion.h1>
@@ -73,24 +73,11 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-sm sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
+            className="text-md sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
           >
             Protecting Lives. Safeguarding Infrastructure. Securing Critical
             Assets
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-xs sm:text-lg text-white/80 mb-6 max-w-2xl mx-auto tracking-wider"
-          >
-            We provide advanced Early Streamer Emission (ESE) lightning
-            protection systems designed to deliver superior safety and
-            performance. Our solutions are engineered to protect residential,
-            commercial, and industrial structures from the devastating impact of
-            lightning strikes
-          </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,7 +126,7 @@ const Index = () => {
       <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {homePage?.stats?.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -163,7 +150,7 @@ const Index = () => {
                   {stat.label}
                 </div>
                 <p
-                  className="text-white text-xs sm:text-sm"
+                  className="text-white text-sm sm:text-sm"
                   dangerouslySetInnerHTML={{ __html: stat?.description }}
                 />
               </motion.div>
@@ -202,11 +189,16 @@ const Index = () => {
               viewport={{ once: true }}
               custom={2}
               variants={fadeUp}
-              className="text-muted-foreground"
+              className="text-muted-foreground text-balance text-sm sm:text-base text-center"
             >
-              We provide complete end-to-end lightning safety solutions from
-              system design and installation to grounding infrastructure and
-              long-term maintenance support.
+              We provide advanced Early Streamer Emission (ESE) lightning
+              protection systems designed to deliver
+              <br className="block sm:hidden" />
+              superior safety and performance. Our solutions are engineered to
+              protect residential, commercial,
+              <br className="block sm:hidden" /> and industrial structures from
+              the devastating
+              <br className="block sm:hidden" /> impact of lightning strikes
             </motion.p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -233,7 +225,7 @@ const Index = () => {
                       )}
                     </div>
 
-                    <h3 className="font-display font-semibold text-card-foreground mb-2">
+                    <h3 className="font-display font-semibold text-card-foreground mb-2 text-lg sm:text-base">
                       {service.title}
                     </h3>
                   </div>
@@ -384,7 +376,7 @@ const Index = () => {
                       key={industry.name}
                       className="flex items-center gap-3 bg-accent rounded-lg px-2 sm:px-4 py-3 hover:bg-primary/10 transition-colors group"
                     >
-                      <span className="text-xs sm:text-sm text-[#043448] font-medium">
+                      <span className="text-sm sm:text-sm text-[#043448] font-medium">
                         {industry.name}
                       </span>
                     </div>

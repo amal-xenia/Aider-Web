@@ -20,7 +20,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           </div>
           <p className="text-sm opacity-70 leading-relaxed mb-4">
             Leading manufacturer & supplier of Lightning Protection Systems.
-            Protecting lives, structures, and equipment since 2010.
+            Protecting lives, structures, and equipment since 2006.
           </p>
           <div className="flex items-center gap-2 text-primary">
             <Zap size={16} />

@@ -1,33 +1,5 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import gallery1 from "/assets/gallery-1.jpg";
-import gallery2 from "/assets/gallery-2.jpg";
-import gallery3 from "/assets/gallery-3.jpg";
-import gallery4 from "/assets/gallery-4.jpg";
-import gallery5 from "/assets/gallery-5.jpg";
-import gallery6 from "/assets/gallery-6.jpg";
+import { works } from "@/data/works";
 import { motion } from "framer-motion";
-
-const galleryItems = [
-  {
-    src: gallery1,
-    title: "Commercial Building LPS Installation",
-    category: "Installation",
-  },
-  {
-    src: gallery2,
-    title: "Industrial Chimney Protection",
-    category: "Industrial",
-  },
-  { src: gallery3, title: "Earthing Pit Construction", category: "Earthing" },
-  { src: gallery4, title: "Telecom Tower Protection", category: "Telecom" },
-  {
-    src: gallery5,
-    title: "Solar Farm Lightning Masts",
-    category: "Renewable Energy",
-  },
-  { src: gallery6, title: "Hospital LPS System", category: "Healthcare" },
-];
 
 const OurWork = () => (
   <div className="min-h-screen">
@@ -64,7 +36,7 @@ const OurWork = () => (
     <section className="section-padding">
       <div className="container-max">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item) => (
+          {works?.map((item) => (
             <div
               key={item.title}
               className="group relative rounded-xl overflow-hidden bg-muted aspect-[4/3]"
