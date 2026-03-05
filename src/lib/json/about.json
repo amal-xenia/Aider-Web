@@ -1,0 +1,43 @@
+{
+  "coreValues": [
+    {
+      "icon": "Award",
+      "title": "Quality First",
+      "desc": "Every product undergoes rigorous testing to meet IS/IEC 62305 and international standards."
+    },
+    {
+      "icon": "Users",
+      "title": "Customer Focus",
+      "desc": "We tailor solutions to each client's unique requirements and provide ongoing support."
+    },
+    {
+      "icon": "Target",
+      "title": "Innovation",
+      "desc": "Continuous R&D to bring the latest lightning protection technologies to our customers."
+    },
+    {
+      "icon": "Eye",
+      "title": "Integrity",
+      "desc": "Transparent pricing, honest assessments, and reliable warranty commitments."
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1,
+      "year": "2006",
+      "title": "Founded",
+      "desc": "Started as a team of dedicated electrical professionals with a vision to provide reliable lightning protection and earthing solutions."
+    },
+    {
+      "id": 2,
+      "year": "2012",
+      "title": "Product Development",
+      "desc": "Introduced advanced lightning protection systems using ESE and conventional technologies, along with advanced maintenance-free earthing systems. Compliance : IS, IEEE & NF C 17 - 102"
+    },
+    {
+      "year": "2023",
+      "title": "1000 + Successful Projects",
+      "desc": "Successfully completed more than 1000 lightning protection and earthing installations across industrial, commercial, and residential sectors in India."
+    }
+  ]
+}

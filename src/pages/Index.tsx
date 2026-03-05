@@ -6,24 +6,14 @@ import {
   Award,
   ArrowRight,
   CheckCircle2,
-  Building2,
-  Factory,
-  Radio,
-  Sun,
-  Fuel,
-  HeartPulse,
-  Server,
-  Home,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import heroBg from "/assets/hero-bg.png";
+import heroBg from "/assets/hero-bg.jpeg";
+import heroBgPhone from "/assets/heroBg-phone.jpeg";
 import homePage from "@/lib/json/homePage.json";
 import { Testimonial } from "@/components/content/testimonial";
-import { IoIosArrowDown } from "react-icons/io";
 import EnquiryPopUp from "@/components/content/EnquiryPopup/EnquiryPopup";
 
 const iconMap = {
@@ -44,86 +34,92 @@ const fadeUp = {
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <img
-          src={heroBg}
-          alt="Lightning Protection System"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <>
+        <section className="relative w-full h-[300px] sm:h-[250px] md:h-[500px] lg:h-full min-h-[500px] overflow-hidden">
+          {/* Background Image */}
+          <img
+            src={heroBg}
+            alt="Lightning Protection System"
+            className="w-full h-full object-cover hidden sm:block"
+          />
+          <img
+            src={heroBgPhone}
+            alt="Lightning Protection System"
+            className="w-full h-full object-cover block sm:hidden"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-primary/10" />
 
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute inset-0 bg-primary/10" />
-
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
-          >
-            Advanced Lightning Protection
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-md sm:text-xl text-white/80 mb-6 max-w-2xl mx-auto"
-          >
-            Protecting Lives. Safeguarding Infrastructure. Securing Critical
-            Assets
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link
-              to="/Contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-white transition-all hover:opacity-90"
+          {/* Content */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+              className="font-display text-3xl min-[480px]:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
             >
-              Request a Quote <ArrowRight size={16} />
-            </Link>
+              Advanced Lightning Protection
+            </motion.h1>
 
-            <Link
-              to="/Products"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="text-sm sm:text-lg text-white/80 mb-6 max-w-2xl"
             >
-              Explore Products
-            </Link>
-          </motion.div>
-        </div>
+              Protecting Lives. Safeguarding Infrastructure. Securing Critical
+              Assets
+            </motion.p>
 
-        {/* ✅ Scroll Indicator FIXED */}
-        <motion.div
-          onClick={() => {
-            document.getElementById("stats")?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center items-start p-1">
             <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.2 }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
-          </div>
-        </motion.div>
-      </section>
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link
+                to="/Contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-white hover:opacity-90"
+              >
+                Request a Quote <ArrowRight size={16} />
+              </Link>
 
+              <Link
+                to="/Products"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white hover:bg-white/10"
+              >
+                Explore Products
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            onClick={() => {
+              document.getElementById("stats")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="absolute bottom-2 sm:bottom-42 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
+          >
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center items-start p-1">
+              <motion.div
+                id="stats"
+                animate={{ y: [0, 12, 0] }}
+                transition={{ repeat: Infinity, duration: 1.2 }}
+                className="w-1.5 h-1.5 bg-white rounded-full"
+              />
+            </div>
+          </motion.div>
+        </section>
+      </>
       {/* Stats */}
-      <section className="bg-primary relative overflow-hidden">
+      <section className="bg-primary relative overflow-hidden ">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -160,7 +156,7 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section id="stats" className="section-padding bg-section-alt">
+      <section className="section-padding bg-section-alt">
         <div className="container-max">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <motion.span

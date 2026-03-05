@@ -10,7 +10,7 @@ function RootLayout() {
   const [loading, setLoading] = useState(true);
 
   // 🔥 Pages where header/footer should NOT show
-  const hideLayoutRoutes = ["/thankyou"];
+  const hideLayoutRoutes = [""];
   const isNotFoundPage =
     location.pathname !== "/" &&
     ![
@@ -21,6 +21,7 @@ function RootLayout() {
       "/Dealership",
       "/Faq",
       "/Contact",
+      "/ThankYou",
     ].some((route) => location.pathname.startsWith(route)) &&
     !location.pathname.startsWith("/Product/");
 

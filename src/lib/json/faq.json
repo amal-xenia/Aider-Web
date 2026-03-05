@@ -3,11 +3,30 @@
     {
       "id": 1,
       "category": "general",
-      "question": "What is an ESE Lightning Arrestor?",
-      "answer1": "An Early Streamer Emission (ESE) Lightning Arrestor is an advanced lightning protection device designed to protect buildings, industries, and critical infrastructure from direct lightning strikes. Unlike conventional lightning rods, an ESE air terminal actively enhances the lightning capture process by emitting an upward leader earlier than standard systems."
+      "question": "Why Choose AIDER ESE Lightning Arresters?",
+      "answer": {
+        "steps": [
+          "Easy to install",
+          "20 years unconditional product warranty.",
+          "Protect your building and premises from vulnerable damages",
+          "Effectively discharge even a high voltage stroke to zero volts",
+          "Maintenance-free and Eco Friendly",
+          "Less overall cost of ownership",
+          "Durable and Long Life",
+          "Excellent Connectivity and conductivity",
+          "Protect All types of structures"
+        ]
+      }
     },
     {
       "id": 2,
+      "category": "general",
+      "question": "What is an ESE Lightning Arrestor?",
+      "answer1": "An Early Streamer Emission (ESE) Lightning Arrestor is an advanced lightning protection device designed to protect buildings, industries, and critical infrastructure from direct lightning strikes. Unlike conventional lightning rods, an ESE air terminal actively enhances the lightning capture process by emitting an upward leader earlier than standard systems."
+    },
+
+    {
+      "id": 3,
       "category": "work",
       "question": "How Does an ESE Lightning Arrestor Work?",
       "answer": {
@@ -23,7 +42,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "category": "general",
       "question": "Why Choose ESE Lightning Protection?",
       "answer": {
@@ -36,7 +55,7 @@
       }
     },
     {
-      "id": 4,
+      "id": 5,
       "category": "features",
       "question": "What are features of ESE Lightning Arrestor?",
       "answer": {

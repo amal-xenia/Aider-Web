@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Search, HelpCircle, Mail } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
-import Footer from "@/components/Footer";
 import faqs from "../lib/json/faq.json";
 
 const FAQPage = () => {
@@ -133,7 +131,10 @@ const FAQPage = () => {
                                 <ul className="">
                                   <p className="pb-2"> {faq?.answer?.intro}</p>
                                   {faq?.answer?.steps?.map((step, index) => (
-                                    <li key={index} className="list-disc pb-1">
+                                    <li
+                                      key={index}
+                                      className="list-disc pb-1 mx-3"
+                                    >
                                       {step}
                                     </li>
                                   ))}

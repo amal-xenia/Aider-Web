@@ -30,7 +30,7 @@ const iconMap: any = {
 };
 const Contact = () => {
   const navigate = useNavigate();
-  const [isSubmit, setisSubmit] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const {
     register,
@@ -43,19 +43,18 @@ const Contact = () => {
 
   const mutateContactUs = useMutation({
     onMutate: () => {
-      setisSubmit(true);
+      setIsSubmit(true);
     },
     mutationFn: async (data) => {
       const response = await ContactUs(data);
       return response;
     },
     onSuccess: () => {
-      toast.success("Sent Successfully.");
       navigate("/ThankYou");
       reset();
     },
     onSettled: () => {
-      setisSubmit(false);
+      setIsSubmit(false);
     },
   });
 
@@ -67,7 +66,7 @@ const Contact = () => {
       subject: data?.subject,
       message: data?.message,
     };
-    // mutateContactUs.mutate(formData);
+    mutateContactUs.mutate(formData);
   };
 
   const inputClasses =

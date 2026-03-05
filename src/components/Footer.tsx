@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Zap } from "lucide-react";
-import logo from "/assets/aider-logo.png";
+import review from "/assets/elements/Reviews-Icon.webp";
 import footerLogo from "/assets/Kaizen-Logo.png";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => (
@@ -11,20 +11,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
         <div>
           <div className="flex items-center gap-2 mb-4">
             <Link to="/" className="flex items-center gap-2">
-              <img
-                src={footerLogo}
-                alt="Aider Logo"
-                className="w-32 sm:w-40 lg:w-44"
-              />
+              <img src={footerLogo} alt="Aider Logo" className="w-44" />
             </Link>
           </div>
-          <p className="text-sm opacity-70 leading-relaxed mb-4">
+          <p className="text-sm opacity-70 leading-relaxed mb-4 text-center sm:text-left">
             Leading manufacturer & supplier of Lightning Protection Systems.
             Protecting lives, structures, and equipment since 2006.
           </p>
           <div className="flex items-center gap-2 text-primary">
-            <Zap size={16} />
-            <span className="text-xs font-semibold tracking-wider uppercase">
+            <Zap size={16} color="#F37426" />
+            <span className="text-xs font-semibold tracking-wider uppercase text-[#F37426]">
               Trusted Protection
             </span>
           </div>
@@ -122,8 +118,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
 
       <div className="border-t border-background/20 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm opacity-50">
         <span>
-          © {new Date().getFullYear()} Aider Lightning Protection Systems. All
-          rights reserved.
+          © {new Date().getFullYear()} Aider Lightning Protection.{" "}
+          <Link to="https://www.spidertechnosoft.com/" target="__blank">
+            Developed by Xenia Technologies.
+          </Link>
         </span>
 
         {/* <Link
@@ -131,7 +129,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           target="_blank"
           className="btn-primary"
         > */}
-        <span>⭐ Leave a Google Review </span>
+        <div className="flex items-center gap-3">
+          <img src={review} className="w-14" />
+          Leave a Google Review{" "}
+        </div>
         {/* </Link> */}
       </div>
     </div>

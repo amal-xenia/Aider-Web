@@ -27,7 +27,6 @@ const ProductDetail = () => {
   }
 
   const handleDownloadBrochure = () => {
-    // Simulate brochure download
     const link = document.createElement("a");
     link.href = "#";
     link.download = `${product.name}-Brochure.pdf`;

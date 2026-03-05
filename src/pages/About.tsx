@@ -11,6 +11,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import EnquiryPopUp from "@/components/content/EnquiryPopup/EnquiryPopup";
+import about from "../lib/json/about.json";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,54 +21,16 @@ const fadeUp = {
     transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
   }),
 };
+const iconMap = {
+  Users,
+  Award,
+  Shield,
+  Zap,
+  Target,
+  Eye,
+};
 
 const About = () => {
-  const coreValues = [
-    {
-      icon: Award,
-      title: "Quality First",
-      desc: "Every product undergoes rigorous testing to meet IS/IEC 62305 and international standards.",
-    },
-    {
-      icon: Users,
-      title: "Customer Focus",
-      desc: "We tailor solutions to each client's unique requirements and provide ongoing support.",
-    },
-    {
-      icon: Target,
-      title: "Innovation",
-      desc: "Continuous R&D to bring the latest lightning protection technologies to our customers.",
-    },
-    {
-      icon: Eye,
-      title: "Integrity",
-      desc: "Transparent pricing, honest assessments, and reliable warranty commitments.",
-    },
-  ];
-
-  const milestones = [
-    {
-      year: "2006",
-      title: "Founded",
-      desc: "Started as a team of passionate electrical engineers",
-    },
-    {
-      year: "2010",
-      title: "Expansion",
-      desc: "Opened manufacturing facility",
-    },
-    {
-      year: "2018",
-      title: "Certification",
-      desc: "Achieved ISO 9001:2015 certification",
-    },
-    {
-      year: "2023",
-      title: "500+ Projects",
-      desc: "Successfully completed 500+ installations",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -173,29 +136,32 @@ const About = () => {
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={index + 1}
-                variants={fadeUp}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-card rounded-xl p-6 border border-border text-center hover:border-primary/30 hover:shadow-lg transition-all group"
-              >
-                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <value.icon
-                    className="text-primary group-hover:text-primary-foreground transition-colors"
-                    size={22}
-                  />
-                </div>
-                <h3 className="font-display font-semibold text-card-foreground mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{value.desc}</p>
-              </motion.div>
-            ))}
+            {about?.coreValues.map((value, index) => {
+              const Icon = iconMap[value.icon as keyof typeof iconMap];
+              return (
+                <motion.div
+                  key={value.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index + 1}
+                  variants={fadeUp}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="bg-card rounded-xl p-6 border border-border text-center hover:border-primary/30 hover:shadow-lg transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Icon
+                      className="text-primary group-hover:text-primary-foreground transition-colors"
+                      size={22}
+                    />
+                  </div>
+                  <h3 className="font-display font-semibold text-card-foreground mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{value.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -223,35 +189,39 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={milestone.year}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={index + 1}
-                variants={fadeUp}
-                className="text-center"
-              >
-                <div className="relative">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-display text-2xl font-bold text-primary">
-                      {milestone.year.slice(-2)}
-                    </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {about?.milestones.map((milestone, index) => {
+              console.log("index", index);
+              return (
+                <motion.div
+                  key={milestone.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index + 1}
+                  variants={fadeUp}
+                  className="text-center"
+                >
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <span className="font-display text-2xl font-bold text-primary">
+                        {milestone.year.slice(-2)}
+                      </span>
+                    </div>
+                    {(index + 1) % 4 !== 0 &&
+                      index < about?.milestones.length - 1 && (
+                        <div className="hidden lg:block absolute top-8 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/30 to-transparent" />
+                      )}
                   </div>
-                  {index < milestones.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/30 to-transparent" />
-                  )}
-                </div>
-                <h3 className="font-display font-semibold text-foreground mb-1">
-                  {milestone.title}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {milestone.desc}
-                </p>
-              </motion.div>
-            ))}
+                  <h3 className="font-display font-semibold text-foreground mb-1">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground text-center">
+                    {milestone.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -285,7 +255,14 @@ const About = () => {
             >
               We are a team of lightning protection specialists with over 20
               years of real-world experience in protecting buildings from
-              lightning damage.
+              lightning damage. AIDER is a leading manufacturer of Early
+              Streamer Emission (ESE) Lightning Protection Systems and allied
+              earthing products in India. Company offering the safest and most
+              effective Heavy Duty Lightning Terminal for lightning protection.
+              It conducted direct strikes and side flash current away from
+              building to earth (Ground) and it will send streamers upward at
+              varying distances. It is a metallic and fully non electronic
+              device with 100 % recyclable and no electromagnetic interference.
             </motion.p>
 
             <motion.p
@@ -297,7 +274,7 @@ const About = () => {
             >
               At AideR Lightning Protection, we work closely with homeowners,
               builders, contractors, and facility managers to design and install
-              reliable lightning safety systems. Our focus is simple — provides
+              reliable lightning safety systems. Our focus is simple provides
               the right protection for the right structure without
               overcomplicating the process.
             </motion.p>
@@ -324,7 +301,7 @@ const About = () => {
             >
               Our team handles everything from site assessment and system design
               to installation and long-term maintenance. We believe in doing the
-              job properly the first time — using quality materials, proven
+              job properly the first time using quality materials, proven
               technology, and safe installation practices.
             </motion.p>
           </div>

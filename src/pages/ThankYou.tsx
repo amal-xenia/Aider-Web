@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  CheckCircle2,
-  ArrowRight,
-  Heart,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import heroBg from "/assets/hero-bg.png";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import heroBg from "/assets/hero-bg.jpeg";
+import heroBgPhone from "/assets/thankyou.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -30,7 +22,12 @@ const ThankYou = () => {
         <img
           src={heroBg}
           alt="Thank You"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden sm:block"
+        />
+        <img
+          src={heroBgPhone}
+          alt="Thank You"
+          className="absolute inset-0 w-full h-full object-cover block sm:hidden"
         />
 
         {/* Overlays */}
@@ -38,7 +35,7 @@ const ThankYou = () => {
         <div className="absolute inset-0 bg-primary/10" />
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto py-10">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
