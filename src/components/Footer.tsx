@@ -10,11 +10,15 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <Link to="/" className="flex items-center gap-2">
-              <img src={footerLogo} alt="Aider Logo" className="w-44" />
+            <Link to="/" className="flex items-center gap-2 mx-auto sm:mx-0">
+              <img
+                src={footerLogo}
+                alt="Aider Logo"
+                className="w-44 mx-auto sm:"
+              />
             </Link>
           </div>
-          <p className="text-sm opacity-70 leading-relaxed mb-4 text-center sm:text-left">
+          <p className="text-sm opacity-70 leading-relaxed mb-4 text-left">
             Leading manufacturer & supplier of Lightning Protection Systems.
             Protecting lives, structures, and equipment since 2006.
           </p>

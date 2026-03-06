@@ -57,7 +57,6 @@ const Warranty = () => {
   });
 
   const onSubmit = (data: WarrantyFormData) => {
-    console.log("data", data);
     const formData = {
       customerName: data?.customerName,
       email: data?.email,
@@ -125,7 +124,7 @@ const Warranty = () => {
                 <input
                   {...register("customerName")}
                   className={inputClasses}
-                  placeholder="John Doe"
+                  placeholder="Name"
                 />
                 {errors.customerName && (
                   <p className={errorClasses}>{errors.customerName.message}</p>
@@ -139,7 +138,7 @@ const Warranty = () => {
                   {...register("email")}
                   type="email"
                   className={inputClasses}
-                  placeholder="john@example.com"
+                  placeholder="Email"
                 />
                 {errors.email && (
                   <p className={errorClasses}>{errors.email.message}</p>
@@ -152,7 +151,7 @@ const Warranty = () => {
                 <input
                   {...register("phoneNumber")}
                   className={inputClasses}
-                  placeholder="+91 98765 43210"
+                  placeholder="Phone Number"
                 />
                 {errors.phoneNumber && (
                   <p className={errorClasses}>{errors.phoneNumber.message}</p>
@@ -162,7 +161,11 @@ const Warranty = () => {
                 <label className={labelClasses}>
                   Pincode <span className="text-red-600">*</span>
                 </label>
-                <input {...register("pinCode")} className={inputClasses} />
+                <input
+                  {...register("pinCode")}
+                  className={inputClasses}
+                  placeholder="Pincode"
+                />
                 {errors.pinCode && (
                   <p className={errorClasses}>{errors.pinCode.message}</p>
                 )}
@@ -172,7 +175,7 @@ const Warranty = () => {
                 <input
                   {...register("companyName")}
                   className={inputClasses}
-                  placeholder="Optional"
+                  placeholder="Company Name"
                 />
               </div>
             </div>
@@ -184,7 +187,11 @@ const Warranty = () => {
                 <label className={labelClasses}>
                   Product Code <span className="text-red-600">*</span>
                 </label>
-                <input {...register("productCode")} className={inputClasses} />
+                <input
+                  {...register("productCode")}
+                  className={inputClasses}
+                  placeholder="Product Code"
+                />
                 {errors.productCode && (
                   <p className={errorClasses}>{errors.productCode.message}</p>
                 )}
@@ -193,7 +200,11 @@ const Warranty = () => {
                 <label className={labelClasses}>
                   Product Name <span className="text-red-600">*</span>
                 </label>
-                <input {...register("productName")} className={inputClasses} />
+                <input
+                  {...register("productName")}
+                  className={inputClasses}
+                  placeholder="Product Name"
+                />
                 {errors.productName && (
                   <p className={errorClasses}>{errors.productName.message}</p>
                 )}

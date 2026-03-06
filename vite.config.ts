@@ -14,8 +14,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   server: {
-    host: "0.0.0.0", // 👈 ADD THIS
-    port: 5174, // 👈 Make sure port matches ngrok
-    allowedHosts: ["10c4-202-164-157-202.ngrok-free.app"],
+    host: "0.0.0.0",
+    port: 5174,
+    allowedHosts: ["fe4e-202-164-157-202.ngrok-free.app"],
   },
 }));

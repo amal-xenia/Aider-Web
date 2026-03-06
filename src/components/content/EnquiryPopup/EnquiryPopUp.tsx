@@ -40,7 +40,7 @@ const EnquiryPopUp = ({
             {title}
           </h2>
 
-          <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
+          <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
             {description}
           </p>
 

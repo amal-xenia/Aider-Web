@@ -25,10 +25,10 @@ const dealerSchema = z.object({
   hearAboutUs: z.string().trim().min(1, "Please select an option"),
 
   // Company Information
-  companyName: z.string().trim().min(1, "Company name is required").max(100),
-  companyEmail: z.string().trim().email("Invalid company email").max(255),
-  businessType: z.string().trim().min(1, "Please select business type"),
-  businessAddress: z.string().trim().min(1, "Address is required").max(300),
+  companyName: z.string().trim().optional(),
+  companyEmail: z.string().trim().optional(),
+  businessType: z.string().trim().optional(),
+  businessAddress: z.string().trim().optional(),
   website: z.string().trim().optional(),
 });
 
@@ -245,38 +245,24 @@ const DealerApplication = () => {
               </h2>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className={labelClasses}>
-                    Company Name <span className="text-red-600">*</span>
-                  </label>
+                  <label className={labelClasses}>Company Name</label>
                   <input
                     {...register("companyName")}
                     className={inputClasses}
-                    placeholder="Your Company Ltd."
+                    placeholder="Company Name"
                   />
-                  {errors.companyName && (
-                    <p className={errorClasses}>{errors.companyName.message}</p>
-                  )}
                 </div>
                 <div>
-                  <label className={labelClasses}>
-                    Company Email <span className="text-red-600">*</span>
-                  </label>
+                  <label className={labelClasses}>Company Email</label>
                   <input
                     {...register("companyEmail")}
                     type="email"
                     className={inputClasses}
-                    placeholder="contact@company.com"
+                    placeholder="Company Email"
                   />
-                  {errors.companyEmail && (
-                    <p className={errorClasses}>
-                      {errors.companyEmail.message}
-                    </p>
-                  )}
                 </div>
                 <div>
-                  <label className={labelClasses}>
-                    Type of Business <span className="text-red-600">*</span>
-                  </label>
+                  <label className={labelClasses}>Type of Business</label>
                   <select
                     {...register("businessType")}
                     className={inputClasses}
@@ -288,11 +274,6 @@ const DealerApplication = () => {
                       </option>
                     ))}
                   </select>
-                  {errors.businessType && (
-                    <p className={errorClasses}>
-                      {errors.businessType.message}
-                    </p>
-                  )}
                 </div>
                 <div>
                   <label className={labelClasses}>Website</label>
@@ -303,20 +284,13 @@ const DealerApplication = () => {
                   />
                 </div>
                 <div>
-                  <label className={labelClasses}>
-                    Business Address <span className="text-red-600">*</span>
-                  </label>
+                  <label className={labelClasses}>Business Address</label>
                   <textarea
                     {...register("businessAddress")}
                     className={inputClasses}
                     rows={3}
                     placeholder="Full business address"
                   />
-                  {errors.businessAddress && (
-                    <p className={errorClasses}>
-                      {errors.businessAddress.message}
-                    </p>
-                  )}
                 </div>
               </div>
             </div>

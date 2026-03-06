@@ -162,7 +162,7 @@ const Contact = () => {
                     <input
                       {...register("name")}
                       className={inputClasses}
-                      placeholder="John Doe"
+                      placeholder="Name"
                     />
                     {errors.name && (
                       <p className={errorClasses}>{errors.name.message}</p>
@@ -176,7 +176,7 @@ const Contact = () => {
                       {...register("email")}
                       type="email"
                       className={inputClasses}
-                      placeholder="john@example.com"
+                      placeholder="Email"
                     />
                     {errors.email && (
                       <p className={errorClasses}>{errors.email.message}</p>
@@ -189,6 +189,7 @@ const Contact = () => {
                     <input
                       {...register("phoneNumber")}
                       className={inputClasses}
+                      placeholder="Phone Number"
                     />
                     {errors.phoneNumber && (
                       <p className={errorClasses}>
