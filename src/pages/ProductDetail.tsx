@@ -250,7 +250,11 @@ const ProductDetail = () => {
           )}
           {product?.LevelImage && (
             <div>
-              <img src={product?.LevelImage} className="w-auto mx-auto py-3" />
+              <img
+                alt={product?.LevelImage}
+                src={product?.LevelImage}
+                className="w-auto mx-auto py-3"
+              />
             </div>
           )}
 
