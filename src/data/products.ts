@@ -5,7 +5,8 @@ import levelImage2 from "/assets/products/AiderADT107M/levelImage.png";
 import AiderADUG20 from "/assets/products/AiderADUG20/mainImage.jpg";
 import AiderADCPE from "/assets/products/AiderADCPE/mainImage.jpg";
 import AiderADCBR from "/assets/products/AiderADCBR/mainImage.jpg";
-import mainImage from "/assets/products/AiderAPC18&APC24/mainImage.jpg";
+import AiderAPC18 from "/assets/products/AiderAPC18&APC24/mainImage.jpg";
+import AiderADLM600 from "/assets/products/AiderADLM600/mainImage.jpeg";
 
 export interface Product {
   id: string;
@@ -20,6 +21,7 @@ export interface Product {
   image: string;
   LevelImage?: string;
   specifications?: { label: string; value: string }[];
+  purpose?: any[];
   features?: string[];
   comparison?: {
     heading: string;
@@ -366,7 +368,7 @@ export const products: Product[] = [
     description:
       "<b>Aider Poly Plastic Earth Pit Chamber Covers</b> are engineered to provide strong, lightweight, and corrosion-resistant protection for electrical, telecom, and water utility pits. Designed for modern infrastructure, these covers ensure safety, durability, and ease of installation.Available Sizes are 18 x 18, 24 x 24, 30 x 30",
 
-    image: mainImage,
+    image: AiderAPC18,
     specifications: [
       {
         label: "Lightweight Yet Strong",
@@ -429,6 +431,58 @@ export const products: Product[] = [
       },
       {
         area: "Industrial and commercial infrastructure",
+      },
+    ],
+  },
+  {
+    id: "AiderADLM600",
+    name: "Aider AD LM 600",
+    subname: "Lattice Mat Earth Electrode",
+    shortDescription: "Aider Poly Plastic Earth Pit Chamber Covers",
+    description:
+      "<p> A <b> lattice mat earthing system </b>is a network of <b> horizontal conductors buried in the ground forming a grid (lattice) pattern </b>. This grid is connected to equipment and structures to provide a <b> low-resistance path for fault current to flow safely into the earth</b>.</p>" +
+      "<p>The grid typically looks like a <b> mesh of conductors arranged in squares  or rectangles </b> beneath the ground,that <b> safely carries dangerous fault currents into the earth</b>.</p>",
+
+    image: AiderADLM600,
+    specifications: [],
+    features: [],
+    purpose: [
+      { point: "Protect <b> people from electric shock </b>." },
+      { point: "Provide <b>low earth resistance path </b>." },
+      { point: "Reduce <b>step potential and touch potential</b>." },
+      { point: "Safely dissipate <b>lightning and fault currents</b>" },
+    ],
+    brochureAvailable: true,
+
+    benefits: [
+      {
+        point: "Low earth resistance",
+      },
+      {
+        point: "Improves electrical safety",
+      },
+      {
+        point: "handles large fault currents",
+      },
+      {
+        point: "Reduces voltage gradients on ground surface",
+      },
+    ],
+    areas: [
+      {
+        area: "Electrical substations",
+      },
+      {
+        area: "Lightning Arrestors",
+      },
+      {
+        area: "Power plants",
+      },
+      {
+        area: "Transformer yards",
+      },
+      {
+        area: "Large industrial plants",
       },
     ],
   },

@@ -202,7 +202,7 @@ const ProductDetail = () => {
               </div>
             </div>
           )}
-          {product.subTexts && (
+          {product?.subTexts && (
             <div>
               <h3 className="font-display text-lg font-bold text-foreground my-6">
                 {product.subTexts?.subHeading}
@@ -221,6 +221,23 @@ const ProductDetail = () => {
                   __html: product?.subTexts?.subDescription2,
                 }}
               />
+            </div>
+          )}
+          {product?.purpose && (
+            <div className="my-8">
+              <h3 className="text-primary font-bold">
+                Purpose of {product?.subname}
+              </h3>
+              <ul className="mx-10">
+                {product?.purpose?.map((purpose: any) => (
+                  <li
+                    className="list-disc text-sm"
+                    dangerouslySetInnerHTML={{
+                      __html: purpose?.point,
+                    }}
+                  />
+                ))}
+              </ul>
             </div>
           )}
           {product?.benefits && (
