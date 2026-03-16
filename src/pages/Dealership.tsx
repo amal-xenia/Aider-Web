@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useMutation } from "@tanstack/react-query";
 import { DealerRegistration } from "@/lib/api";
 import Spinner from "@/components/ui/spinner";
+import { HeartHandshake, Lightbulb } from "lucide-react";
 
 const dealerSchema = z.object({
   // Personal Information
@@ -33,6 +34,15 @@ const dealerSchema = z.object({
 });
 
 type DealerFormData = z.infer<typeof dealerSchema>;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
+  }),
+};
 
 const DealerApplication = () => {
   const navigate = useNavigate();
@@ -121,23 +131,79 @@ const DealerApplication = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
           >
-            Become a Dealer
+            Become Our Authorized Dealer
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.5 }}
-            className="text-muted-foreground"
+            className="text-muted-foreground "
           >
-            Join our network of successful dealers. Fill out the application
-            form below. Our team will review your application and contact you
-            within 2-3 business days.
+            We invite entrepreneurs, distributors, and business owners to join
+            our growing network as authorized dealers. This is a great
+            opportunity to partner with a trusted company and build a profitable
+            long-term business relationship. Our dealership program is designed
+            to support our partners with quality products, reliable supply, and
+            dedicated business assistance.
           </motion.p>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container-max max-w-2xl mx-auto">
+          <div className="container-max grid lg:grid-cols-2 gap-12 pb-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              variants={fadeUp}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                  <Lightbulb className="text-primary" size={20} />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Opportunities with us
+                </h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
+                We are continuously expanding our network and welcoming
+                passionate individuals and businesses to grow together with us.
+                If you are interested in partnering with us as a dealer or
+                working with us as a freelance site worker, we would be happy to
+                hear from you.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={1}
+              variants={fadeUp}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                  <HeartHandshake
+                    className="text-primary w-20 sm:w-auto"
+                    size={20}
+                  />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Benefits of Becoming Our Dealer/Channel Partner
+                </h2>
+              </div>
+              <ul className="flex flex-col gap-y-3 list-disc text-muted-foreground leading-relaxed text-sm sm:text-base ml-5">
+                <li>High-quality and trusted products</li>
+                <li>Attractive dealer margins</li>
+                <li>Marketing and promotional support</li>
+                <li>Reliable product supply</li>
+                <li>Long-term business partnership</li>
+                <li>Dedicated support from our team</li>
+              </ul>
+            </motion.div>
+          </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="bg-card rounded-2xl border border-border p-6 sm:p-8 space-y-6"

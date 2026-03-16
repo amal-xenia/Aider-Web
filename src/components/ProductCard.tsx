@@ -18,6 +18,7 @@ const ProductCard = forwardRef<HTMLAnchorElement, ProductCardProps>(
         <img
           src={product.image}
           alt={product.name}
+          draggable="false"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />

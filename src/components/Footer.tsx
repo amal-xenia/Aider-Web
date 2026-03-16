@@ -14,6 +14,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
               <img
                 src={footerLogo}
                 alt="Aider Logo"
+                draggable="false"
                 className="w-44 mx-auto sm:"
               />
             </Link>
@@ -134,7 +135,12 @@ const Footer = forwardRef<HTMLElement>((_, ref) => (
           className="btn-primary"
         > */}
         <div className="flex items-center gap-3">
-          <img alt="Google review" src={review} className="w-14" />
+          <img
+            alt="Google review"
+            src={review}
+            draggable="false"
+            className="w-14"
+          />
           Leave a Google Review{" "}
         </div>
         {/* </Link> */}

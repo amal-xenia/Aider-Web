@@ -69,6 +69,7 @@ const OurWork = () => {
                       <img
                         src={work.src}
                         alt={work.title}
+                        draggable="false"
                         className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
@@ -148,11 +149,11 @@ const OurWork = () => {
                       exit={{ opacity: 0 }}
                       transition={{ delay: 0.2 }}
                       onClick={() => setSelectedImage(null)}
-                      className="absolute -top-12 right-0 text-white hover:text-gray-300 text-4xl font-light"
+                      className="absolute top-0 right-0 text-white hover:text-gray-300 text-4xl font-light"
                     >
                       ×
                     </motion.button>
-                    <div className="bg-white rounded-2xl overflow-hidden">
+                    <div className=" rounded-2xl overflow-hidden">
                       <div className="flex items-center justify-center bg-black/5">
                         <motion.img
                           initial={{ opacity: 0 }}

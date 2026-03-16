@@ -41,12 +41,14 @@ const Index = () => {
           {/* Background Image */}
           <img
             src={heroBg}
+            draggable="false"
             alt="Lightning Protection System"
             className="w-full h-full object-cover hidden sm:block"
           />
           <img
             src={heroBgPhone}
             alt="Lightning Protection System"
+            draggable="false"
             className="w-full h-full object-cover block sm:hidden"
           />
           <div className="absolute inset-0 bg-black/60" />
@@ -139,6 +141,7 @@ const Index = () => {
                   <img
                     src={stat.icon}
                     alt={stat.label}
+                    draggable="false"
                     className="h-11 sm:h-14 w-12 sm:w-16 object-contain"
                   />
                 </div>

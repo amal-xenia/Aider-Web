@@ -51,6 +51,7 @@ const ProductDetail = () => {
               <img
                 src={product.image}
                 alt={product.name}
+                draggable="false"
                 className="w-full h-full object-cover aspect-square"
               />
             </div>
@@ -270,6 +271,7 @@ const ProductDetail = () => {
               <img
                 alt={product?.LevelImage}
                 src={product?.LevelImage}
+                draggable="false"
                 className="w-auto mx-auto py-3"
               />
             </div>

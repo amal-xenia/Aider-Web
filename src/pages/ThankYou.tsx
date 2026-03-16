@@ -22,11 +22,13 @@ const ThankYou = () => {
         <img
           src={heroBg}
           alt="Thank You"
+          draggable="false"
           className="absolute inset-0 w-full h-full object-cover hidden sm:block"
         />
         <img
           src={heroBgPhone}
           alt="Thank You"
+          draggable="false"
           className="absolute inset-0 w-full h-full object-cover block sm:hidden"
         />
 

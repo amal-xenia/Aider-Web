@@ -43,7 +43,12 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <nav className="container-max flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 lg:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Aider Logo" className="w-32 sm:w-40 lg:w-44" />
+          <img
+            src={logo}
+            alt="Aider Logo"
+            draggable="false"
+            className="w-32 sm:w-40 lg:w-44"
+          />
         </Link>
 
         {/* Desktop nav */}
