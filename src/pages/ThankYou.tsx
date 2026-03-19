@@ -33,7 +33,7 @@ const ThankYou = () => {
         />
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/80" />
         <div className="absolute inset-0 bg-primary/10" />
 
         {/* Content */}

@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const Products = () => (
   <div className="min-h-screen">
     {/* Hero Banner */}
-    <section className="bg-primary section-padding">
+    <section className="bg-section-alt section-padding">
       <div className="container-max text-center">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.5 }}
-          className="inline-block text-xs font-semibold tracking-widest uppercase text-primary-foreground/70 mb-3"
+          className="inline-block text-xs font-semibold tracking-widest uppercase text-primary mb-3"
         >
           Our Products
         </motion.span>
@@ -19,7 +19,7 @@ const Products = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="font-display text-4xl sm:text-5xl font-bold text-primary-foreground mb-4"
+          className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4"
         >
           Premium Lightning Protection Equipment
         </motion.h1>
@@ -27,7 +27,7 @@ const Products = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.5 }}
-          className="text-primary-foreground/80 max-w-2xl mx-auto text-lg"
+          className="text-muted-foreground max-w-2xl mx-auto text-lg"
         >
           Explore our complete range of certified, high-quality products
           designed for maximum safety and durability across all industries.

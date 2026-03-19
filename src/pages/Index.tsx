@@ -51,7 +51,7 @@ const Index = () => {
             draggable="false"
             className="w-full h-full object-cover block sm:hidden"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/80" />
           <div className="absolute inset-0 bg-primary/10" />
 
           {/* Content */}

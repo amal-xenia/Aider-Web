@@ -71,7 +71,7 @@ const OurWork = () => {
                         alt={work.title}
                         draggable="false"
                         className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
+                        // loading="lazy"
                       />
 
                       {/* Subtle overlay on hover */}

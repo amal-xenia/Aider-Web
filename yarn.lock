@@ -2890,6 +2890,11 @@ keyv@^4.5.4:
   dependencies:
     json-buffer "3.0.1"
 
+lenis@1.3.17:
+  version "1.3.17"
+  resolved "https://registry.yarnpkg.com/lenis/-/lenis-1.3.17.tgz#5a8c486e6001703b7d50d412fff3348102f302e9"
+  integrity sha512-k9T9rgcxne49ggJOvXCraWn5dt7u2mO+BNkhyu6yxuEnm9c092kAW5Bus5SO211zUvx7aCCEtzy9UWr0RB+oJw==
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -2914,6 +2919,13 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+locomotive-scroll@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/locomotive-scroll/-/locomotive-scroll-5.0.1.tgz#90c0a5014c2265cd027ce7f778ec3c44aaa5ff0f"
+  integrity sha512-dCgGixh7Xu3AVrG/N8HCXImN5MrqkuI1mnjejbsMWDB7CIYy7ekd5JtglI9mfdCVReCgHdsyQ1a7We31HfNyrg==
+  dependencies:
+    lenis "1.3.17"
 
 lodash.merge@^4.6.2:
   version "4.6.2"
