@@ -69,50 +69,58 @@ const About = () => {
 
       {/* Mission & Vision */}
       <section className="section-padding">
-        <div className="container-max grid lg:grid-cols-2 gap-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fadeUp}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Target className="text-primary" size={20} />
+        <div className="container-max grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              variants={fadeUp}
+              className="pb-7"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                  <Target className="text-primary" size={20} />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Our Mission
+                </h2>
               </div>
-              <h2 className="font-display text-2xl font-bold text-foreground">
-                Our Mission
-              </h2>
-            </div>
-            <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
-              Our mission is to provide reliable, high-performance lightning
-              protection and grounding solutions that protect lives, property,
-              and essential infrastructure.
-            </p>
-          </motion.div>
+              <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
+                Our mission is to provide reliable, high-performance lightning
+                protection and grounding solutions that protect lives, property,
+                and essential infrastructure.
+              </p>
+            </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-            variants={fadeUp}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Eye className="text-primary" size={20} />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={1}
+              variants={fadeUp}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                  <Eye className="text-primary" size={20} />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Our Vision
+                </h2>
               </div>
-              <h2 className="font-display text-2xl font-bold text-foreground">
-                Our Vision
-              </h2>
-            </div>
-            <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
-              Our vision is to become a trusted leader in lightning protection,
-              earthing, and grounding solutions by continuously improving our
-              technology, expertise, and service quality.
-            </p>
-          </motion.div>
+              <p className="text-muted-foreground leading-relaxed text-justify text-sm sm:text-base">
+                Our vision is to become a trusted leader in lightning
+                protection, earthing, and grounding solutions by continuously
+                improving our technology, expertise, and service quality.
+              </p>
+            </motion.div>
+          </div>
+          <img
+            src="./assets/design01.jpeg"
+            alt="whole Products"
+            className="rounded-xl shadow-lg w-full h-full object-cover"
+          />
         </div>
       </section>
 

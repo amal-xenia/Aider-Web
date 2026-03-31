@@ -98,30 +98,34 @@ const Index = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <motion.div
-            onClick={() => {
-              document.getElementById("stats")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
-            className="absolute bottom-2 sm:bottom-42 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
-          >
-            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center items-start p-1">
-              <motion.div
+          <div className="container-max relative">
+            <motion.div
+              onClick={() => {
+                document.getElementById("stats")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="absolute bottom-2 sm:bottom-42 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
+            >
+              <div
+                className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center items-start p-1"
                 id="stats"
-                animate={{ y: [0, 12, 0] }}
-                transition={{ repeat: Infinity, duration: 1.2 }}
-                className="w-1.5 h-1.5 bg-white rounded-full"
-              />
-            </div>
-          </motion.div>
+              >
+                <motion.div
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.2 }}
+                  className="w-1.5 h-1.5 bg-white rounded-full"
+                />
+              </div>
+            </motion.div>
+          </div>
         </section>
       </>
       {/* Stats */}
-      <section className="bg-primary relative overflow-hidden ">
+      <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -142,7 +146,7 @@ const Index = () => {
                     src={stat.icon}
                     alt={stat.label}
                     draggable="false"
-                    className="h-11 sm:h-14 w-12 sm:w-16 object-contain"
+                    className="h-11 sm:h-14 w-12 sm:w-16 object-contain "
                   />
                 </div>
                 <div className="text-md sm:text-md text-primary-foreground/70 my-1 font-medium">

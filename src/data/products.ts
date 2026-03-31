@@ -1,5 +1,5 @@
-import boxADT62M from "/assets/products/boxADT62M/mainImage.jpg";
-import levelImage1 from "/assets/products/boxADT62M/LevelImage.jpeg";
+import AiderADT62M from "/assets/products/AiderADT62M/mainImage.jpg";
+import levelImage1 from "/assets/products/AiderADT62M/LevelImage.jpeg";
 import AiderADT107M from "/assets/products/AiderADT107M/mainImage.jpg";
 import levelImage2 from "/assets/products/AiderADT107M/levelImage.png";
 import AiderADUG20 from "/assets/products/AiderADUG20/mainImage.jpg";
@@ -49,13 +49,13 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "Box-AD-T62M",
-    name: "Box AD T62M",
+    id: "Aider AD T62M",
+    name: "Aider AD T62M",
     shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection System model: AD T62M ",
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T62M",
     description:
-      "Aider ESE Heavy Duty Lightning Protection System model: AD T107M with independently tested &amp; configured with lightning terminal as a spheroid. This is comprised of electrically isolated He-30 (6082) alloy panel body surrounding an earthed central final. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone &amp; uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the “Switching Impulse Voltage and” Direct Voltage of 70 kv.",
-    image: boxADT62M,
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T62M with independently tested and configured with lightning terminal as spheroid. This consists of an electrically isolated HE-30 (6082) alloy panel body surrounding an earthed central fin. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone and uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the“Switching Impulse Voltage and” Direct Voltage of 70 kv.",
+    image: AiderADT62M,
     specifications: [
       { label: "Brand", value: "Aider" },
       { label: "Model", value: "AD T62M" },
@@ -74,9 +74,9 @@ export const products: Product[] = [
     id: "AiderADT107M",
     name: "Aider AD T107M",
     shortDescription:
-      "Aider ESE Heavy Duty Lightning Protection System model: AD T62M ",
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T107M",
     description:
-      "Aider ESE Heavy Duty Lightning Protection System model: AD T62M with independently tested and configured with lightning terminal as spheroid. This consists of an electrically isolated HE-30 (6082) alloy panel body surrounding an earthed central fin. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone and uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the“Switching Impulse Voltage and” Direct Voltage of 70 kv.",
+      "Aider E S E Heavy Duty Lightning Protection System model: AD T107M with independently tested &amp; configured with lightning terminal as a spheroid. This is comprised of electrically isolated He-30 (6082 alloy panel body surrounding an earthed central final. The insulation material used to electrically isolate the panel is comprised oa base polymer which provides high ozone &amp; uv resistance with a die-electric strength of 24-38 uv/mm tested.. As per NFC 17-102, the ESE air terminal is tested with the “Switching Impulse Voltage and” Direct Voltage of 70 kv.",
     image: AiderADT107M,
     specifications: [
       { label: "Brand", value: "Aider" },
