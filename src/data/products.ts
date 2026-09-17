@@ -364,9 +364,9 @@ export const products: Product[] = [
     name: "Aider APC18 & APC24",
     subname:
       "Poly Plastic Earth Pit Chamber Covers – Durable & Sustainable Solutions",
-    shortDescription: "Aider Poly Plastic Earth Pit Chamber Covers",
+    shortDescription: "Lattice Mat Earth Electrode",
     description:
-      "<b>Aider Poly Plastic Earth Pit Chamber Covers</b> are engineered to provide strong, lightweight, and corrosion-resistant protection for electrical, telecom, and water utility pits. Designed for modern infrastructure, these covers ensure safety, durability, and ease of installation.Available Sizes are 18 x 18, 24 x 24, 30 x 30",
+      "<b>Lattice Mat Earth Electrode</b> are engineered to provide strong, lightweight, and corrosion-resistant protection for electrical, telecom, and water utility pits. Designed for modern infrastructure, these covers ensure safety, durability, and ease of installation.Available Sizes are 18 x 18, 24 x 24, 30 x 30",
 
     image: AiderAPC18,
     specifications: [
@@ -438,7 +438,7 @@ export const products: Product[] = [
     id: "AiderADLM600",
     name: "Aider AD LM 600",
     subname: "Lattice Mat Earth Electrode",
-    shortDescription: "Aider Poly Plastic Earth Pit Chamber Covers",
+    shortDescription: "Lattice Mat Earth Electrode",
     description:
       "<p> A <b> lattice mat earthing system </b>is a network of <b> horizontal conductors buried in the ground forming a grid (lattice) pattern </b>. This grid is connected to equipment and structures to provide a <b> low-resistance path for fault current to flow safely into the earth</b>.</p>" +
       "<p>The grid typically looks like a <b> mesh of conductors arranged in squares  or rectangles </b> beneath the ground,that <b> safely carries dangerous fault currents into the earth</b>.</p>",
